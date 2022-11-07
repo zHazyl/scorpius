@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: commons, auth
+      uri: http://localhost:8888
+  profiles:
+    active: dev
