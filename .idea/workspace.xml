@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,8 +142,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.CloudGatewayApplication" />
+        <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.EurekaServerApplication (1)" />
       </list>
     </recent_temporary>
@@ -176,7 +177,7 @@
       <workItem from="1667812192515" duration="127000" />
       <workItem from="1667812341737" duration="2021000" />
       <workItem from="1667814518983" duration="402000" />
-      <workItem from="1667819787104" duration="1385000" />
+      <workItem from="1667819787104" duration="1706000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -248,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667820785705</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="up">
+      <created>1667821432409</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667821432409</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
