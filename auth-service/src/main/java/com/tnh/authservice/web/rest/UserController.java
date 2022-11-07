@@ -4,7 +4,6 @@ import com.tnh.authservice.config.KeycloakProvider;
 import com.tnh.authservice.dto.UserDTO;
 import com.tnh.authservice.mapper.UserMapper;
 import com.tnh.authservice.security.model.AuthRequestModel;
-import com.tnh.authservice.security.model.TokenResponse;
 import com.tnh.authservice.service.KeycloakAdminClientService;
 import com.tnh.authservice.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.BadRequestException;
