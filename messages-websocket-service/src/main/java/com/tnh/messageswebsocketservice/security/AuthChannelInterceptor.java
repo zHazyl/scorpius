@@ -12,10 +12,11 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class AuthChanelInterceptor implements ChannelInterceptor {
+public class AuthChannelInterceptor implements ChannelInterceptor {
+
     private final WebSocketAuthService webSocketAuthService;
 
-    public AuthChanelInterceptor(WebSocketAuthService webSocketAuthService) {
+    public AuthChannelInterceptor(WebSocketAuthService webSocketAuthService) {
         this.webSocketAuthService = webSocketAuthService;
     }
 
@@ -26,9 +27,9 @@ public class AuthChanelInterceptor implements ChannelInterceptor {
         if (accessor != null && StompCommand.CONNECT.equals(accessor.getCommand())) {
             var authorizationHeaderValue = (String) accessor.getFirstNativeHeader(HttpHeaders.AUTHORIZATION);
             final var authenticationToken = webSocketAuthService.attemptAuthentication(authorizationHeaderValue);
-            if (authenticationToken != null) {
+
+            if (authenticationToken != null)
                 accessor.setUser(authenticationToken);
-            }
         }
 
         return message;

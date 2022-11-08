@@ -19,12 +19,17 @@ public class WebSocketAuthService {
 
 
     public UsernamePasswordAuthenticationToken attemptAuthentication(String authorizationHeaderValue) {
-        try {
-            var token = authorizationHeaderValue.replace(jwtUtils.getJwtConfig().getTokenPrefix(), "");
-            return jwtUtils.getAuthentication(token);
-        } catch (JWTDecodeException | TokenExpiredException ex) {
-            log.error("Invalid token");
+
+        if (jwtUtils.isValidAuthorizationHeaderValue(authorizationHeaderValue)) {
+            try {
+                var token = authorizationHeaderValue.replace(jwtUtils.getJwtConfig().getTokenPrefix(), "");
+                return jwtUtils.getAuthentication(token);
+            } catch (JWTDecodeException | TokenExpiredException ex) {
+                log.error("Invalid token");
+            }
         }
         return null;
     }
+
+
 }

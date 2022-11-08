@@ -1,7 +1,7 @@
 package com.tnh.messageswebsocketservice.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tnh.messageswebsocketservice.security.AuthChanelInterceptor;
+import com.tnh.messageswebsocketservice.security.AuthChannelInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
@@ -23,23 +23,22 @@ import java.util.List;
 @Order(Ordered.HIGHEST_PRECEDENCE + 99)
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-    private final AuthChanelInterceptor authChanelInterceptor;
+    private final AuthChannelInterceptor authChannelInterceptor;
     private final String clientLogin;
     private final String clientPasscode;
     private final String systemLogin;
     private final String systemPasscode;
-    // relay: to receive and send on information
     private final int relayPort;
     private final String relayHost;
 
-    public WebSocketConfig(AuthChanelInterceptor authChanelInterceptor,
+    public WebSocketConfig(AuthChannelInterceptor authChannelInterceptor,
                            @Value("${websocket.rabbitmq.stomp.clientLogin:guest}") String clientLogin,
                            @Value("${websocket.rabbitmq.stomp.clientPasscode:guest}") String clientPasscode,
                            @Value("${websocket.rabbitmq.stomp.systemLogin:guest}") String systemLogin,
                            @Value("${websocket.rabbitmq.stomp.systemPasscode:guest}") String systemPasscode,
                            @Value("${websocket.rabbitmq.stomp.relayPort:61613}") int relayPort,
                            @Value("${websocket.rabbitmq.stomp.relayHost:127.0.0.1}") String relayHost) {
-        this.authChanelInterceptor = authChanelInterceptor;
+        this.authChannelInterceptor = authChannelInterceptor;
         this.clientLogin = clientLogin;
         this.clientPasscode = clientPasscode;
         this.systemLogin = systemLogin;
@@ -50,7 +49,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws").setAllowedOrigins("*");
+        registry.addEndpoint("/ws")
+                .setAllowedOrigins("*");
     }
 
     @Override
@@ -62,14 +62,16 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                 .setUserRegistryBroadcast("/topic/log-user-registry")
                 .setSystemLogin(this.systemLogin)
                 .setSystemPasscode(this.systemPasscode)
-                .setClientPasscode(this.clientPasscode)
                 .setClientLogin(this.clientLogin)
+                .setClientPasscode(this.clientPasscode)
                 .setRelayHost(this.relayHost)
                 .setRelayPort(this.relayPort);
     }
+
+
     @Override
     public void configureClientInboundChannel(ChannelRegistration registration) {
-        registration.interceptors(authChanelInterceptor);
+        registration.interceptors(authChannelInterceptor);
     }
 
     @Override
@@ -82,7 +84,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         converter.setContentTypeResolver(resolver);
 
         messageConverters.add(converter);
+
         return false;
     }
+
 
 }

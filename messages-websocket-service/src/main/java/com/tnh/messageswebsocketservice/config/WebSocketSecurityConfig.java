@@ -12,8 +12,8 @@ public class WebSocketSecurityConfig extends AbstractSecurityWebSocketMessageBro
         messages.anyMessage().authenticated();
     }
 
-    // TODO: Temporarily disabled CRSF
-    // In the future provide CRSF endpoint
+    // TODO: Temporarily disabled CRSF.
+    //  In the future provide CRSF endpoint.
     @Override
     protected boolean sameOriginDisabled() {
         return true;
