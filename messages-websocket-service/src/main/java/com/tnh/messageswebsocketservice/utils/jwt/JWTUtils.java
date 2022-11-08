@@ -31,10 +31,10 @@ public class JWTUtils {
 
     public UsernamePasswordAuthenticationToken getAuthentication(String token) {
 
-        var decodedJWT = JWT
-                .require(sign)
-                .build()
-                .verify(token);
+        var decodedJWT = JWT.decode(token);
+//                .require(sign)
+//                .build()
+//                .verify(token);
 
         if (decodedJWT != null) {
             var authorities = decodedJWT.getClaim(AUTHORITIES_KEY)
