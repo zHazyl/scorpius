@@ -38,10 +38,11 @@ public class KeycloakAdminClientServiceImpl implements KeycloakAdminClientServic
         CredentialRepresentation credentialRepresentation = createPasswordCredentials(userDTO.getPassword());
 
         UserRepresentation kcUser = new UserRepresentation();
+//        kcUser.setId(userDTO.getId().toString());
         kcUser.setUsername(userDTO.getUsername());
         kcUser.setCredentials(Collections.singletonList(credentialRepresentation));
-        kcUser.setFirstName(userDTO.getFirstName());
-        kcUser.setLastName(userDTO.getLastName());
+//        kcUser.setFirstName(userDTO.getFirstName());
+//        kcUser.setLastName(userDTO.getLastName());
         kcUser.setEmail(userDTO.getEmail());
         kcUser.setEnabled(true);
         kcUser.setEmailVerified(false);

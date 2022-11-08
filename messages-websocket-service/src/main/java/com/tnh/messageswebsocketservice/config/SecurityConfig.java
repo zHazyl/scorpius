@@ -1,20 +1,12 @@
-package com.tnh.authservice.config;
+package com.tnh.messageswebsocketservice.config;
 
-import com.tnh.authservice.domain.User;
-import com.tnh.authservice.dto.UserDTO;
-import com.tnh.authservice.mapper.UserMapper;
-import org.keycloak.adapters.KeycloakConfigResolver;
-import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
+import com.tnh.messageswebsocketservice.utils.jwt.JWTConfig;
+import com.tnh.messageswebsocketservice.utils.jwt.JWTUtils;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
-import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
-import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -35,19 +27,24 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     //The HttpSecurity object passed into the method configures all access rules
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-//        http.authorizeRequests().anyRequest().permitAll();
+        // @formatter:off
+
         http
                 .cors()
-                .and().csrf().disable()
+                .and()
+                .csrf()
+                .disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .httpBasic().disable()
+                .httpBasic()
+                .disable()
                 .authorizeRequests()
-                .mvcMatchers(HttpMethod.POST, "/users/authenticate").permitAll()
-                .mvcMatchers(HttpMethod.POST, "/users/user").permitAll()
-                .anyRequest().authenticated();
+                .mvcMatchers("/ws").permitAll()
+                .anyRequest()
+                .authenticated();
+
+        // @formatter:on
     }
 
     // Defines the session authentication strategy
@@ -71,6 +68,17 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Bean
+    public JWTConfig jwtConfig() {
+        return new JWTConfig();
+    }
+
+    @Bean
+    public JWTUtils jwtUtils() {
+        return new JWTUtils(jwtConfig());
+    }
+
 
 //    @Autowired
 //    public KeycloakClientRequestFactory keycloakClientRequestFactory;

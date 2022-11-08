@@ -81,6 +81,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findUserByEmail(String userEmail) {
+        try {
+            return userRepository.findByEmail(userEmail);
+        }catch (Exception e) {
+            throw new NotFoundException("Not found user with id " + userEmail);
+        }
+    }
+
+    @Override
     public User modifyUser(String userId, String firstName, String lastName) {
 
         var user = findUserById(userId);
@@ -95,6 +104,19 @@ public class UserServiceImpl implements UserService {
         }
 
         return userRepository.save(user);
+    }
+
+    @Override
+    public void changeUserPassword(String userId, String currentPassword, String newPassword) {
+        var user = findUserById(userId);
+        throwExceptionIfNotCurrentUser(user);
+
+        if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
+            throw new InvalidDataException("Incorrect current password");
+        }
+
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
     }
 
     private void throwExceptionIfNotCurrentUser(User user) {

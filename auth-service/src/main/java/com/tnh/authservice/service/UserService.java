@@ -7,6 +7,11 @@ public interface UserService {
     User createUser(User user);
     User findUserById(String userId);
 
+    User findUserByEmail(String userEmail);
+
     User modifyUser(String userId, String firstName, String lastName);
+
+    void changeUserPassword(String userId, String currentPassword, String newPassword);
+
 
 }

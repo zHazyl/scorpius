@@ -5,13 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/messaging/sender/UserSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/security/model/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/utils/security/SecurityUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/utils/security/SecurityUserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/model/ChangePassRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/MessagesWebSocketServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/ResolverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/dto/ChatMessageDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketConnectionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketLogs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/messaging/sender/StoringMessagesSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/AuthChanelInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/WebSocketAuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/security/SecurityUserDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/security/SecurityUserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/web/websocket/MessagesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap-docker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/security/model/TokenResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/KeycloakAdminClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/KeycloakAdminClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/impl/KeycloakAdminClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/impl/KeycloakAdminClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/impl/KeycloakAdminClientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/impl/KeycloakAdminClientServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/tnh/cloudgateway/config/CloudConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/tnh/cloudgateway/config/CloudConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-gateway/target/classes/com/tnh/cloudgateway/config/CloudConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/target/classes/com/tnh/cloudgateway/config/CloudConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +69,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,9 +97,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hazy/Public/Learning/Code/Java/websockettv2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/hazy/IdeaProjects/scorpius/messages-websocket-service/src/main/resources&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;13166fefa7d2294d70067cb0b80788d6&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;d3adbb89300cd24a4c0bd72f089ad472&quot;
   }
 }</component>
   <component name="ReactorSettings">
@@ -65,16 +107,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice" />
-      <recent name="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/utils/exception" />
-      <recent name="$PROJECT_DIR$/cloud-gateway/src/main/java/com/tnh/cloudgateway/filter" />
-      <recent name="$PROJECT_DIR$/cloud-gateway" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/security" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/dto" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service" />
+      <recent name="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/utils" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tnh.messageswebsocketservice.config" />
+      <recent name="com.tnh.messageswebsocketservice.utils.security" />
+      <recent name="com.tnh.authservice.security.model" />
       <recent name="com.tnh.cloudgateway.config" />
       <recent name="com.tnh.authservice.service.impl" />
-      <recent name="com.tnh.authservice.mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -84,7 +128,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
+  <component name="RunManager" selected="Spring Boot.MessagesWebSocketServiceApplication">
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tnh.authservice.AuthServiceApplication" />
@@ -138,7 +182,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MessagesWebSocketServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="messages-websocket-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tnh.messageswebsocketservice.MessagesWebSocketServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Spring Boot.MessagesWebSocketServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication (1)" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
@@ -182,7 +234,11 @@
       <workItem from="1667812192515" duration="127000" />
       <workItem from="1667812341737" duration="2021000" />
       <workItem from="1667814518983" duration="402000" />
-      <workItem from="1667819787104" duration="5383000" />
+      <workItem from="1667819787104" duration="10702000" />
+      <workItem from="1667872244570" duration="6455000" />
+      <workItem from="1667882122523" duration="1524000" />
+      <workItem from="1667889145590" duration="5839000" />
+      <workItem from="1667897636113" duration="2369000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -275,7 +331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667821830029</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="up">
+      <created>1667827174029</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667827174029</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,15 +360,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="request.uri" />

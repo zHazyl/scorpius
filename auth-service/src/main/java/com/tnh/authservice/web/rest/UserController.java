@@ -3,16 +3,23 @@ package com.tnh.authservice.web.rest;
 import com.tnh.authservice.config.KeycloakProvider;
 import com.tnh.authservice.dto.UserDTO;
 import com.tnh.authservice.mapper.UserMapper;
+import com.tnh.authservice.messaging.sender.UserSender;
 import com.tnh.authservice.security.model.AuthRequestModel;
+import com.tnh.authservice.security.model.TokenResponse;
 import com.tnh.authservice.service.KeycloakAdminClientService;
 import com.tnh.authservice.service.UserService;
+import com.tnh.authservice.utils.exception.InvalidDataException;
+import com.tnh.authservice.utils.security.SecurityUserDetails;
+import com.tnh.authservice.web.model.ChangePassRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
+import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.AccessTokenResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -26,16 +33,19 @@ import javax.ws.rs.BadRequestException;
 public class UserController {
     private final UserService userService;
     private final UserMapper userMapper;
+    private final UserSender userSender;
     private final KeycloakAdminClientService keycloakAdminClientService;
     private final KeycloakProvider keycloakProvider;
 
     // fix mapper in pom.xml
     public UserController(UserService userService,
                           UserMapper userMapper,
+                          UserSender userSender,
                           KeycloakAdminClientService keycloakAdminClientService,
                           KeycloakProvider keycloakProvider) {
         this.userService = userService;
         this.userMapper = userMapper;
+        this.userSender = userSender;
         this.keycloakAdminClientService = keycloakAdminClientService;
         this.keycloakProvider = keycloakProvider;
 //        this.userSender = userSender;
@@ -50,7 +60,7 @@ public class UserController {
         var user = userService.createUser(userDTO.getUsername(), userDTO.getPassword(),
                 userDTO.getEmail(), userDTO.getFirstName(), userDTO.getLastName());
 
-//        userSender.send(userMapper.mapToUserDTO(user));
+        userSender.send(userMapper.mapToUserDTO(user));
         userMapper.mapToUserDTO(user);
 
         var location = uriComponentsBuilder.path("/users/{id}")
@@ -58,9 +68,16 @@ public class UserController {
         return ResponseEntity.created(location).body(userMapper.mapToUserDTOWithoutActivationKey(user));
     }
 
+//    @PatchMapping("/activate")
+//    public ResponseEntity<Void> activateAccount(@RequestParam("data") String activationKey) {
+//        userService.
+//    }
+
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable("id") String userId) {
-        return ResponseEntity.ok(userMapper.mapToUserDTO(userService.findUserById(userId)));
+        var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.getRealm()).users().get(userId);
+        var userEmail = usersResource.toRepresentation().getEmail();
+        return ResponseEntity.ok(userMapper.mapToUserDTO(userService.findUserByEmail(userEmail)));
     }
 
     @PatchMapping("/{id}")
@@ -70,17 +87,31 @@ public class UserController {
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AccessTokenResponse> login(@NotNull @RequestBody AuthRequestModel authRequestModel) {
+    public ResponseEntity<TokenResponse> login(@NotNull @RequestBody AuthRequestModel authRequestModel) {
         Keycloak keycloak = keycloakProvider.newKeycloakBuilderWithPasswordCredentials(authRequestModel.getUsername(), authRequestModel.getPassword()).build();
 
         AccessTokenResponse accessTokenResponse = null;
+        TokenResponse tokenResponse = null;
         try {
             accessTokenResponse = keycloak.tokenManager().getAccessToken();
-            return ResponseEntity.status(HttpStatus.OK).body(accessTokenResponse);
+            tokenResponse = new TokenResponse(accessTokenResponse.getToken());
+            return ResponseEntity.status(HttpStatus.OK).body(tokenResponse);
         } catch (BadRequestException ex) {
 
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(accessTokenResponse);
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(tokenResponse);
         }
+    }
+
+    @PatchMapping("/{id}/change-password")
+    public ResponseEntity<Void> changeUserPassword(@PathVariable("id") String userId,
+                                                   @Valid @RequestBody ChangePassRequest request,
+                                                   Authentication authentication) {
+        var currentUser = (SecurityUserDetails) authentication.getPrincipal();
+        if (!userId.equals(currentUser.getId())) {
+            throw new InvalidDataException("Invalid user id");
+        }
+        userService.changeUserPassword(currentUser.getId(), request.getCurrentPassword(), request.getNewPassword());
+        return ResponseEntity.noContent().build();
     }
 
 }

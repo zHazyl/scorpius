@@ -13,6 +13,7 @@
         <module name="config-server" />
         <module name="eureka-server" />
         <module name="cloud-gateway" />
+        <module name="messages-websocket-service" />
       </profile>
       <profile name="Annotation profile for scorpius" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -34,6 +35,7 @@
       <module name="cloud-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="messages-websocket-service" options="-parameters" />
       <module name="scorpius" options="" />
     </option>
   </component>

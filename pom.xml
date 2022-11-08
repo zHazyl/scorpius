@@ -8,7 +8,8 @@
     <module>auth-service</module>
     <module>config-server</module>
     <module>eureka-server</module>
-      <module>cloud-gateway</module>
+    <module>cloud-gateway</module>
+    <module>messages-websocket-service</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
