@@ -12,8 +12,8 @@ public class WebSocketLogs {
 
     private final WebSocketMessageBrokerStats webSocketMessageBrokerStats;
 
-    public WebSocketLogs (WebSocketMessageBrokerStats webSocketMessageBrokerStats) {
-        this.webSocketMessageBrokerStats =  webSocketMessageBrokerStats;
+    public WebSocketLogs(WebSocketMessageBrokerStats webSocketMessageBrokerStats) {
+        this.webSocketMessageBrokerStats = webSocketMessageBrokerStats;
     }
 
     @PostConstruct

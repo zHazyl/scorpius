@@ -4,11 +4,14 @@ import com.tnh.messageswebsocketservice.dto.ChatMessageDTO;
 import com.tnh.messageswebsocketservice.messaging.sender.StoringMessagesSender;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
+
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class MessagesController {
+
     private final SimpMessagingTemplate simpMessagingTemplate;
     private final StoringMessagesSender storingMessagesSender;
 
@@ -19,8 +22,9 @@ public class MessagesController {
     }
 
     @MessageMapping("/chat")
-    public void processMessage(@Payload ChatMessageDTO chatMessageDTO) {
-        simpMessagingTemplate.convertAndSend("/topic/" + chatMessageDTO.getRecipient() + ".messages", chatMessageDTO);
-        storingMessagesSender.send(chatMessageDTO);
+    public void processMessage(@Payload ChatMessageDTO chatMessage) {
+        simpMessagingTemplate.convertAndSend("/topic/" + chatMessage.getRecipient() + ".messages", chatMessage);
+        storingMessagesSender.send(chatMessage);
     }
+
 }

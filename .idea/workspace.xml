@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/MessagesWebSocketServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/MessagesWebSocketServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/AuthChanelInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/AuthChannelInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/WebSocketAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/security/WebSocketAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketConnectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketConnectionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/log/WebSocketLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/messaging/sender/StoringMessagesSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/messaging/sender/StoringMessagesSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/UserContextInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/jwt/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/web/websocket/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/web/websocket/MessagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "/home/hazy/IdeaProjects/scorpius/messages-websocket-service/src/main",
+    "last_opened_file_path": "/home/hazy/IdeaProjects/scorpius/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "d3adbb89300cd24a4c0bd72f089ad472"
   }
@@ -72,15 +75,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main" />
       <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils" />
-      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/resources" />
-      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/utils/security" />
       <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/dto" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main" />
+      <recent name="$PROJECT_DIR$/messages-websocket-service/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.tnh.messageswebsocketservice.security" />
       <recent name="com.tnh.messageswebsocketservice.config" />
+      <recent name="com.tnh.messageswebsocketservice.security" />
       <recent name="com.tnh.messageswebsocketservice.utils.security" />
       <recent name="com.tnh.authservice.security.model" />
       <recent name="com.tnh.cloudgateway.config" />
@@ -164,9 +167,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.EurekaServerApplication (1)" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
         <item itemvalue="Spring Boot.CloudGatewayApplication" />
-        <item itemvalue="Spring Boot.EurekaServerApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +208,7 @@
       <workItem from="1667889145590" duration="5839000" />
       <workItem from="1667897636113" duration="3825000" />
       <workItem from="1667905225370" duration="93000" />
-      <workItem from="1667908910513" duration="2161000" />
+      <workItem from="1667908910513" duration="3262000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -312,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667900034094</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="up">
+      <created>1667911085258</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1667911085258</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

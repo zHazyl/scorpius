@@ -8,7 +8,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 public class StoringMessagesSender {
 
     private final RabbitTemplate template;
-
     private final FanoutExchange fanout;
 
     public StoringMessagesSender(RabbitTemplate template, FanoutExchange fanout) {
@@ -22,5 +21,6 @@ public class StoringMessagesSender {
         var message = converter.toMessage(chatMessageDTO, messageProperties);
         template.send(fanout.getName(), "", message);
     }
+
 
 }

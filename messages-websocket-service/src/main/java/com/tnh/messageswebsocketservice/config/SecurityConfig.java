@@ -14,7 +14,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
 import org.springframework.security.core.session.SessionRegistryImpl;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.session.RegisterSessionAuthenticationStrategy;
 import org.springframework.security.web.authentication.session.SessionAuthenticationStrategy;
 
@@ -23,31 +22,28 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 @EnableGlobalMethodSecurity(jsr250Enabled = true) //Enables @RoleAllowed
 public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
-    //Registers the Keycloak authentication provider
-    //The HttpSecurity object passed into the method configures all access rules
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // @formatter:off
 
         http
-                .cors()
-                .and()
-                .csrf()
-                .disable()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .httpBasic()
-                .disable()
-                .authorizeRequests()
-                .mvcMatchers("/ws").permitAll()
-                .anyRequest()
-                .authenticated();
+            .cors()
+        .and()
+            .csrf()
+            .disable()
+            .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        .and()
+            .httpBasic()
+            .disable()
+            .authorizeRequests()
+            .mvcMatchers("/ws").permitAll()
+            .anyRequest()
+            .authenticated();
 
         // @formatter:on
     }
 
-    // Defines the session authentication strategy
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         KeycloakAuthenticationProvider keycloakAuthenticationProvider =
@@ -64,11 +60,6 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
     }
 
-//    @Bean
-//    public BCryptPasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-
     @Bean
     public JWTConfig jwtConfig() {
         return new JWTConfig();
@@ -78,15 +69,5 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     public JWTUtils jwtUtils() {
         return new JWTUtils(jwtConfig());
     }
-
-
-//    @Autowired
-//    public KeycloakClientRequestFactory keycloakClientRequestFactory;
-//
-//    @Bean
-//    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-//    public KeycloakRestTemplate keycloakRestTemplate() {
-//        return new KeycloakRestTemplate(keycloakClientRequestFactory);
-//    }
 
 }
