@@ -90,9 +90,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User modifyUser(String userId, String firstName, String lastName) {
+    public User modifyUser(String email, String firstName, String lastName) {
 
-        var user = findUserById(userId);
+        var user = findUserByEmail(email);
         throwExceptionIfNotCurrentUser(user);
 
         if (isNotEmpty(firstName)) {

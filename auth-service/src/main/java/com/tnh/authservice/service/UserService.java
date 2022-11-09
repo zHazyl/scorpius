@@ -9,7 +9,7 @@ public interface UserService {
 
     User findUserByEmail(String userEmail);
 
-    User modifyUser(String userId, String firstName, String lastName);
+    User modifyUser(String userEmail, String firstName, String lastName);
 
     void changeUserPassword(String userId, String currentPassword, String newPassword);
 

@@ -27,8 +27,9 @@ public class CloudConfig {
 //                        .uri("lb://CHAT-MESSAGES")
 ////                        .id("CHAT-MESSAGES")
 //                )
+                //add removeRequestHeader= Cookie, Set-cookie to propagate authorization HTTP heaader
                 .route(predicateSpec -> predicateSpec.path("/messages-websocket-service/**")
-                        .filters(f -> f.rewritePath("/messages-websocket-service/(?<remaining>.*)", "/${remaining}"))
+                        .filters(f -> f.rewritePath("/messages-websocket-service/(?<remaining>.*)", "/${remaining}").removeRequestHeader("Cookie,Set-Cookie"))
                         .uri("lb://MESSAGES-WEBSOCKET")
 //                        .id("MESSAGES-WEBSOCKET")
                 )

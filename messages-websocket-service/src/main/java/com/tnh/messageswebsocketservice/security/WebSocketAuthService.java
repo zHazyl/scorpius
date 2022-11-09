@@ -1,32 +1,34 @@
 package com.tnh.messageswebsocketservice.security;
 
+import com.auth0.jwt.JWT;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.tnh.messageswebsocketservice.utils.jwt.JWTUtils;
+import com.tnh.messageswebsocketservice.config.KeycloakProvider;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
 public class WebSocketAuthService {
 
-    private final JWTUtils jwtUtils;
+    private final KeycloakProvider keycloakProvider;
 
-    public WebSocketAuthService(JWTUtils jwtUtils) {
-        this.jwtUtils = jwtUtils;
+    public WebSocketAuthService(KeycloakProvider keycloakProvider) {
+        this.keycloakProvider = keycloakProvider;
     }
 
+    public KeycloakAuthenticationToken attemptAuthentication(String authorizationHeaderValue) {
 
-    public UsernamePasswordAuthenticationToken attemptAuthentication(String authorizationHeaderValue) {
+        try {
+            var token = authorizationHeaderValue.replace("Bearer ", "");
+            var decode = JWT.decode(token);
+            var id = decode.getSubject();
+            var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.getRealm()).users();
+//            var username = usersResource.toRepresentation().getUsername();
 
-        if (jwtUtils.isValidAuthorizationHeaderValue(authorizationHeaderValue)) {
-            try {
-                var token = authorizationHeaderValue.replace(jwtUtils.getJwtConfig().getTokenPrefix(), "");
-                return jwtUtils.getAuthentication(token);
-            } catch (JWTDecodeException | TokenExpiredException ex) {
-                log.error("Invalid token");
-            }
+        } catch (JWTDecodeException | TokenExpiredException ex) {
+            log.error("Invalid token");
         }
         return null;
     }

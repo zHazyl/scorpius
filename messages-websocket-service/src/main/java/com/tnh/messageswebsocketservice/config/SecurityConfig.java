@@ -1,7 +1,6 @@
 package com.tnh.messageswebsocketservice.config;
 
-import com.tnh.messageswebsocketservice.utils.jwt.JWTConfig;
-import com.tnh.messageswebsocketservice.utils.jwt.JWTUtils;
+import org.keycloak.adapters.KeycloakDeployment;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
 import org.keycloak.adapters.springsecurity.config.KeycloakWebSecurityConfigurerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,13 +60,19 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public JWTConfig jwtConfig() {
-        return new JWTConfig();
+    public SimpleAuthorityMapper getSimpleAuthorityMapper() {
+        SimpleAuthorityMapper mapper = new SimpleAuthorityMapper();
+        mapper.setPrefix("");
+        return mapper;
     }
 
+    @Autowired
+    private ResolverConfig resolverConfig;
+
     @Bean
-    public JWTUtils jwtUtils() {
-        return new JWTUtils(jwtConfig());
+    public KeycloakDeployment getKeycloakDeployment() {
+        return resolverConfig.KeycloakConfigResolver().resolve(null);
     }
+
 
 }

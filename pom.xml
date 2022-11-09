@@ -10,6 +10,7 @@
     <module>eureka-server</module>
     <module>cloud-gateway</module>
     <module>messages-websocket-service</module>
+      <module>chat-service</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>

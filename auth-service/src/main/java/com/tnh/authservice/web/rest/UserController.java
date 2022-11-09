@@ -82,7 +82,9 @@ public class UserController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<UserDTO> editUser(@PathVariable("id") String userId, @RequestBody UserDTO userDTO) {
-        var user = userService.modifyUser(userId, userDTO.getFirstName(), userDTO.getLastName());
+        var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.getRealm()).users().get(userId);
+        var userEmail = usersResource.toRepresentation().getEmail();
+        var user = userService.modifyUser(userEmail, userDTO.getFirstName(), userDTO.getLastName());
         return ResponseEntity.ok(userMapper.mapToUserDTO(user));
     }
 

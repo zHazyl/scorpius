@@ -14,10 +14,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class AuthChannelInterceptor implements ChannelInterceptor {
 
-    private final WebSocketAuthService webSocketAuthService;
+    private final BearerTokenAuthenticator bearerTokenAuthenticator;
 
-    public AuthChannelInterceptor(WebSocketAuthService webSocketAuthService) {
-        this.webSocketAuthService = webSocketAuthService;
+    public AuthChannelInterceptor(BearerTokenAuthenticator bearerTokenAuthenticator) {
+        this.bearerTokenAuthenticator = bearerTokenAuthenticator;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class AuthChannelInterceptor implements ChannelInterceptor {
 
         if (accessor != null && StompCommand.CONNECT.equals(accessor.getCommand())) {
             var authorizationHeaderValue = (String) accessor.getFirstNativeHeader(HttpHeaders.AUTHORIZATION);
-            final var authenticationToken = webSocketAuthService.attemptAuthentication(authorizationHeaderValue);
+            final var authenticationToken = bearerTokenAuthenticator.authenticate(authorizationHeaderValue);
 
             if (authenticationToken != null)
                 accessor.setUser(authenticationToken);
