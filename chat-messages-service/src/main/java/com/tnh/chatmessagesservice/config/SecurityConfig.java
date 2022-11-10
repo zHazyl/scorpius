@@ -1,7 +1,5 @@
 package com.tnh.chatmessagesservice.config;
 
-import com.tnh.chatmessagesservice.utils.jwt.JWTConfig;
-import com.tnh.chatmessagesservice.utils.jwt.JWTUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
@@ -15,7 +13,6 @@ import org.springframework.security.web.server.savedrequest.NoOpServerRequestCac
 
 @EnableWebFluxSecurity
 public class SecurityConfig {
-
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http,
@@ -47,15 +44,15 @@ public class SecurityConfig {
         return authenticationWebFilter;
     }
 
-    @Bean
-    public JWTConfig jwtConfig() {
-        return new JWTConfig();
-    }
-
-    @Bean
-    public JWTUtils jwtUtils() {
-        return new JWTUtils(jwtConfig());
-    }
+//    @Bean
+//    public JWTConfig jwtConfig() {
+//        return new JWTConfig();
+//    }
+//
+//    @Bean
+//    public JWTUtils jwtUtils() {
+//        return new JWTUtils(jwtConfig());
+//    }
 
 
 }

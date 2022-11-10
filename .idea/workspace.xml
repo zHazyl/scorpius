@@ -5,47 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/dto/ChatMessageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/security/SecurityUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/security/SecurityUserDetailsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/test/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/BearerTokenAuthenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/KeycloakConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/KeycloakProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/ResolverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/KeycloakProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/RabbitMQConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/ResolverConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/messaging/listener/RabbitMessageStoringListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/messaging/listener/RabbitMessageStoringListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/SecurityUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/SecurityUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/exception/CommonExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/exception/CommonExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/tnh/cloudgateway/config/CloudConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/java/com/tnh/cloudgateway/config/CloudConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-gateway/target/classes/com/tnh/cloudgateway/config/CloudConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/target/classes/com/tnh/cloudgateway/config/CloudConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/docker/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/docker/image-id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT-docker-info.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT-docker-info.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/target/test-classes/META-INF/docker/com.tnh/eureka-server/image-id" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/target/test-classes/META-INF/docker/com.tnh/eureka-server/image-id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +38,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -107,17 +84,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils" />
-      <recent name="$PROJECT_DIR$/chat-messages-service" />
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config" />
+      <recent name="$PROJECT_DIR$/chat-messages-service" />
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security" />
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.tnh.chatmessagesservice.dto" />
       <recent name="com.tnh.chatmessagesservice.config" />
+      <recent name="com.tnh.authservice.config" />
+      <recent name="com.tnh.chatmessagesservice.dto" />
       <recent name="com.tnh.chatmessagesservice.security" />
       <recent name="com.tnh.authservice.utils" />
-      <recent name="com.tnh.chatservice.dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -230,8 +207,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CloudGatewayApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.CloudGatewayApplication" />
         <item itemvalue="Spring Boot.EurekaServerApplication (1)" />
       </list>
     </recent_temporary>
@@ -290,7 +267,11 @@
       <workItem from="1668049442655" duration="2174000" />
       <workItem from="1668056474895" duration="2359000" />
       <workItem from="1668060038059" duration="590000" />
-      <workItem from="1668061757006" duration="898000" />
+      <workItem from="1668061757006" duration="3594000" />
+      <workItem from="1668068014359" duration="2373000" />
+      <workItem from="1668070878047" duration="672000" />
+      <workItem from="1668071814651" duration="664000" />
+      <workItem from="1668073315101" duration="294000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -446,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668045269321</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="up">
+      <created>1668062680823</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1668062680823</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,6 +503,11 @@
           <line>20</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
           <line>22</line>
@@ -527,7 +520,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
           <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="setDeliveredStatusForAllRecipientMessagesInFriendChat">
+          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

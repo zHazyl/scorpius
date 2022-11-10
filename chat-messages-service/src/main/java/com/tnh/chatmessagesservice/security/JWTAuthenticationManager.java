@@ -2,7 +2,7 @@ package com.tnh.chatmessagesservice.security;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
-import com.tnh.chatmessagesservice.utils.jwt.JWTUtils;
+import com.tnh.chatmessagesservice.config.BearerTokenAuthenticator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.core.Authentication;
@@ -13,10 +13,10 @@ import reactor.core.publisher.Mono;
 @Component
 public class JWTAuthenticationManager implements ReactiveAuthenticationManager {
 
-    private JWTUtils jwtUtils;
+    private BearerTokenAuthenticator bearerTokenAuthenticator;
 
-    public JWTAuthenticationManager(JWTUtils jwtUtils) {
-        this.jwtUtils = jwtUtils;
+    public JWTAuthenticationManager(BearerTokenAuthenticator bearerTokenAuthenticator) {
+        this.bearerTokenAuthenticator = bearerTokenAuthenticator;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class JWTAuthenticationManager implements ReactiveAuthenticationManager {
                 .flatMap(token -> {
                     log.debug("Authenticate {}" , token);
                     try {
-                        return Mono.just(jwtUtils.getAuthentication(token));
+                        return Mono.just(bearerTokenAuthenticator.authenticate(token));
                     } catch (JWTDecodeException | TokenExpiredException ex) {
                         log.error("Decode token exception");
                         return Mono.empty();
