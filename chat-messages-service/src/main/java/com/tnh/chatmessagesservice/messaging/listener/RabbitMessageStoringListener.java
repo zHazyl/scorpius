@@ -1,9 +1,9 @@
 package com.tnh.chatmessagesservice.messaging.listener;
 
+import com.tnh.chatmessagesservice.dto.ChatMessageDTO;
+import com.tnh.chatmessagesservice.service.ChatMessageService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
-import com.tnh.chatmessagesservice.service.ChatMessageService;
-import pl.kubaretip.dtomodels.ChatMessageDTO;
 
 @Component
 public class RabbitMessageStoringListener {

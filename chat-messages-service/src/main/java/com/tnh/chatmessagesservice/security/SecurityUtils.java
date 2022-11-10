@@ -1,7 +1,7 @@
 package com.tnh.chatmessagesservice.security;
 
+import com.tnh.chatmessagesservice.utils.security.SecurityUserDetails;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
-import pl.kubaretip.authutils.security.SecurityUserDetails;
 import reactor.core.publisher.Mono;
 
 public class SecurityUtils {

@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
 
-    private static final String MESSAGE_STORING_QUEUE = "pl.kubaretip.chatmessagesservice.storing";
-    private static final String MESSAGE_STORING_EXCHANGE = "pl.kubaretip.chatmessagesservice.fanout";
+    private static final String MESSAGE_STORING_QUEUE = "com.tnh.chatmessagesservice.storing";
+    private static final String MESSAGE_STORING_EXCHANGE = "com.tnh.chatmessagesservice.fanout";
     private static final String MESSAGE_STORING_DLQ = MESSAGE_STORING_QUEUE + ".dlq";
     private static final String MESSAGE_STORING_DLE = MESSAGE_STORING_QUEUE + ".dlx";
-    private static final String MESSAGE_DELETING_QUEUE = "pl.kubaretip.chatmessagesservice.deleting";
-    private static final String MESSAGE_DELETING_EXCHANGE = "pl.kubaretip.chatmessagesservice.fanout.deleting";
+    private static final String MESSAGE_DELETING_QUEUE = "com.tnh.chatmessagesservice.deleting";
+    private static final String MESSAGE_DELETING_EXCHANGE = "com.tnh.chatmessagesservice.fanout.deleting";
 
     @Bean
     public FanoutExchange messageStoringExchange() {

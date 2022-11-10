@@ -2,11 +2,11 @@ package com.tnh.chatmessagesservice.security;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
+import com.tnh.chatmessagesservice.utils.jwt.JWTUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
-import pl.kubaretip.authutils.jwt.JWTUtils;
 import reactor.core.publisher.Mono;
 
 @Slf4j

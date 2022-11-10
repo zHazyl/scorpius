@@ -28,26 +28,26 @@ services:
     #      PRIVATE_KEY: ${PEM}
     ports:
       - 8888:8888
-  eureka-server:
-    container_name: eureka-server
-    image: scorpius/eureka-server:0.0.1-SNAPSHOT
-    environment:
-      SPRING_PROFILES_ACTIVE: ${PROFILE}
-      CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
-    ports:
-      - 8761:8761
-  auth_db:
-    container_name: auth_service_mysql
-    image: library/mysql:8.0.22
-    environment:
-      MYSQL_DATABASE: auth_service_database
-      MYSQL_USER: ${AUTH_SERVICE_MYSQL_USER}
-      MYSQL_PASSWORD: ${AUTH_SERVICE_MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${AUTH_SERVICE_MYSQL_ROOT_PASS}
-    ports:
-      - 3306:3306
-    volumes:
-      - mysql_auth:/var/lib/mysql
+#  eureka-server:
+#    container_name: eureka-server
+#    image: scorpius/eureka-server:0.0.1-SNAPSHOT
+#    environment:
+#      SPRING_PROFILES_ACTIVE: ${PROFILE}
+#      CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
+#    ports:
+#      - 8761:8761
+#  auth_db:
+#    container_name: auth_service_mysql
+#    image: library/mysql:8.0.22
+#    environment:
+#      MYSQL_DATABASE: auth_service_database
+#      MYSQL_USER: ${AUTH_SERVICE_MYSQL_USER}
+#      MYSQL_PASSWORD: ${AUTH_SERVICE_MYSQL_PASS}
+#      MYSQL_ROOT_PASSWORD: ${AUTH_SERVICE_MYSQL_ROOT_PASS}
+#    ports:
+#      - 3306:3306
+#    volumes:
+#      - mysql_auth:/var/lib/mysql
   mysql-kc:
     image: mysql:8.0.22
     ports:
@@ -96,18 +96,18 @@ services:
     volumes:
       - mongo_chat:/var/lib/mongo
       - ./init-chat-messages-service-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
-  chat_db:
-    container_name: chat_service_mysql
-    image: library/mysql:8.0.22
-    environment:
-      MYSQL_DATABASE: chat_service_database
-      MYSQL_USER: ${CHAT_SERVICE_MYSQL_USER}
-      MYSQL_PASSWORD: ${CHAT_SERVICE_MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${CHAT_SERVICE_MYSQL_ROOT_PASS}
-    ports:
-      - 3307:3306
-    volumes:
-      - mysql_chat:/var/lib/mysql
+#  chat_db:
+#    container_name: chat_service_mysql
+#    image: library/mysql:8.0.22
+#    environment:
+#      MYSQL_DATABASE: chat_service_database
+#      MYSQL_USER: ${CHAT_SERVICE_MYSQL_USER}
+#      MYSQL_PASSWORD: ${CHAT_SERVICE_MYSQL_PASS}
+#      MYSQL_ROOT_PASSWORD: ${CHAT_SERVICE_MYSQL_ROOT_PASS}
+#    ports:
+#      - 3307:3306
+#    volumes:
+#      - mysql_chat:/var/lib/mysql
   rabbitmq:
     container_name: rabbitmq-service
     image: rabbitmq:3-management

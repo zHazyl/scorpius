@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
+import com.tnh.chatmessagesservice.utils.exception.error.Error;
 
 public interface CommonExceptionHandler {
 
