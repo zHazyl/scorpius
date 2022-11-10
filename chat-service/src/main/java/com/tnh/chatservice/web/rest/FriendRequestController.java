@@ -2,11 +2,11 @@ package com.tnh.chatservice.web.rest;
 
 import com.tnh.chatservice.dto.FriendRequestDTO;
 import com.tnh.chatservice.service.FriendRequestService;
+import com.tnh.chatservice.utils.SecurityUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import pl.kubaretip.authutils.SecurityUtils;
-import com.tnh.chatservice.dto.mapper.FriendRequestMapper;
+import com.tnh.chatservice.mapper.FriendRequestMapper;
 
 import java.util.List;
 

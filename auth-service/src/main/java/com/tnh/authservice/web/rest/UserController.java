@@ -1,5 +1,6 @@
 package com.tnh.authservice.web.rest;
 
+import com.auth0.jwt.JWT;
 import com.tnh.authservice.config.KeycloakProvider;
 import com.tnh.authservice.dto.UserDTO;
 import com.tnh.authservice.mapper.UserMapper;
@@ -8,8 +9,9 @@ import com.tnh.authservice.security.model.AuthRequestModel;
 import com.tnh.authservice.security.model.TokenResponse;
 import com.tnh.authservice.service.KeycloakAdminClientService;
 import com.tnh.authservice.service.UserService;
+import com.tnh.authservice.utils.SecurityUtils;
 import com.tnh.authservice.utils.exception.InvalidDataException;
-import com.tnh.authservice.utils.security.SecurityUserDetails;
+//import com.tnh.authservice.utils.security.SecurityUserDetails;
 import com.tnh.authservice.web.model.ChangePassRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
@@ -26,6 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.BadRequestException;
+import java.util.UUID;
 
 @Slf4j
 @RestController
@@ -59,9 +62,21 @@ public class UserController {
         keycloakAdminClientService.createKeycloakUser(userDTO);
         var user = userService.createUser(userDTO.getUsername(), userDTO.getPassword(),
                 userDTO.getEmail(), userDTO.getFirstName(), userDTO.getLastName());
+        Keycloak keycloak = keycloakProvider.newKeycloakBuilderWithPasswordCredentials(userDTO.getUsername(), userDTO.getPassword()).build();
 
+        AccessTokenResponse accessTokenResponse = null;
+        String token = null;
+        try {
+            accessTokenResponse = keycloak.tokenManager().getAccessToken();
+            token = accessTokenResponse.getToken();
+        } catch (Exception e) {
+
+        }
+        var decode = JWT.decode(token);
+        var id = decode.getSubject();
+        user.setId(UUID.fromString(id));
         userSender.send(userMapper.mapToUserDTO(user));
-        userMapper.mapToUserDTO(user);
+//        userMapper.mapToUserDTO(user);
 
         var location = uriComponentsBuilder.path("/users/{id}")
                 .buildAndExpand(user.getId()).toUri();
@@ -77,6 +92,7 @@ public class UserController {
     public ResponseEntity<UserDTO> getUserById(@PathVariable("id") String userId) {
         var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.getRealm()).users().get(userId);
         var userEmail = usersResource.toRepresentation().getEmail();
+//        var id = SecurityUtils.getCurrentUser();
         return ResponseEntity.ok(userMapper.mapToUserDTO(userService.findUserByEmail(userEmail)));
     }
 
@@ -104,16 +120,15 @@ public class UserController {
         }
     }
 
-    @PatchMapping("/{id}/change-password")
-    public ResponseEntity<Void> changeUserPassword(@PathVariable("id") String userId,
-                                                   @Valid @RequestBody ChangePassRequest request,
-                                                   Authentication authentication) {
-        var currentUser = (SecurityUserDetails) authentication.getPrincipal();
-        if (!userId.equals(currentUser.getId())) {
-            throw new InvalidDataException("Invalid user id");
-        }
-        userService.changeUserPassword(currentUser.getId(), request.getCurrentPassword(), request.getNewPassword());
-        return ResponseEntity.noContent().build();
-    }
+//    @PatchMapping("/{id}/change-password")
+//    public ResponseEntity<Void> changeUserPassword(@PathVariable("id") String userId,
+//                                                   @Valid @RequestBody ChangePassRequest request,
+//                                                   Authentication authentication) {
+//        if (!userId.equals(SecurityUtils.getCurrentUser())) {
+//            throw new InvalidDataException("Invalid user id");
+//        }
+//        userService.changeUserPassword(SecurityUtils.getCurrentUser(), request.getCurrentPassword(), request.getNewPassword());
+//        return ResponseEntity.noContent().build();
+//    }
 
 }

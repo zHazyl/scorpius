@@ -4,6 +4,7 @@ import com.tnh.authservice.domain.User;
 import com.tnh.authservice.dto.UserDTO;
 import com.tnh.authservice.mapper.UserMapper;
 import org.keycloak.adapters.KeycloakConfigResolver;
+import org.keycloak.adapters.KeycloakDeployment;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
 import org.keycloak.adapters.springsecurity.client.KeycloakClientRequestFactory;
@@ -70,6 +71,14 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Autowired
+    private ResolverConfig resolverConfig;
+
+    @Bean
+    public KeycloakDeployment getKeycloakDeployment() {
+        return resolverConfig.KeycloakConfigResolver().resolve(null);
     }
 
 //    @Autowired

@@ -4,13 +4,13 @@ package com.tnh.chatservice.service.impl;
 import com.tnh.chatservice.repository.ChatProfileRepository;
 import com.tnh.chatservice.repository.FriendChatRepository;
 import com.tnh.chatservice.repository.FriendRequestRepository;
+import com.tnh.chatservice.utils.exception.AlreadyExistsException;
+import com.tnh.chatservice.utils.exception.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import com.tnh.chatservice.domain.ChatProfile;
 import com.tnh.chatservice.domain.FriendChat;
 import com.tnh.chatservice.service.FriendChatService;
-import pl.kubaretip.exceptionutils.AlreadyExistsException;
-import pl.kubaretip.exceptionutils.NotFoundException;
 
 import javax.transaction.Transactional;
 import java.util.List;

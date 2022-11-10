@@ -1,9 +1,13 @@
 package com.tnh.authservice.service.impl;
 
+import com.tnh.authservice.config.KeycloakProvider;
 import com.tnh.authservice.constants.ApplicationConstants;
 import com.tnh.authservice.domain.User;
 import com.tnh.authservice.repository.UserRepository;
+import com.tnh.authservice.service.KeycloakAdminClientService;
 import com.tnh.authservice.service.UserService;
+//import com.tnh.authservice.utils.SecurityUtils;
+import com.tnh.authservice.utils.SecurityUtils;
 import com.tnh.authservice.utils.exception.AlreadyExistsException;
 import com.tnh.authservice.utils.exception.InvalidDataException;
 import com.tnh.authservice.utils.exception.NotFoundException;
@@ -11,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
+import org.keycloak.admin.client.resource.UsersResource;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +28,15 @@ import static org.apache.commons.lang.StringUtils.*;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final KeycloakProvider keycloakProvider;
+    private final KeycloakAdminClientService keycloakAdminClientService;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, KeycloakProvider keycloakProvider, KeycloakAdminClientService keycloakAdminClientService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.keycloakProvider = keycloakProvider;
+        this.keycloakAdminClientService = keycloakAdminClientService;
     }
 
     @Override
@@ -111,6 +121,9 @@ public class UserServiceImpl implements UserService {
         var user = findUserById(userId);
         throwExceptionIfNotCurrentUser(user);
 
+//        var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.realm).users().get(userId);
+//        usersResource.resetPassword();
+
         if (!passwordEncoder.matches(currentPassword, user.getPassword())) {
             throw new InvalidDataException("Incorrect current password");
         }
@@ -120,8 +133,8 @@ public class UserServiceImpl implements UserService {
     }
 
     private void throwExceptionIfNotCurrentUser(User user) {
-//        if (!user.getId().toString().equals(SecurityUtils.getCurrentUser())) {
-//            throw new InvalidDataException("Incorrect user id");
-//        }
+        if (!user.getUsername().toString().equals(SecurityUtils.getCurrentUserPreferredUsername(keycloakProvider))) {
+            throw new InvalidDataException("Incorrect user id");
+        }
     }
 }

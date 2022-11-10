@@ -122,9 +122,9 @@ services:
       - rabbitmq:/var/log/rabbitmq/
       - ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
   # Mail catcher for local debugging
-  mailhog:
-    image: mailhog/mailhog
-    container_name: mailhog
-    ports:
-      - 1025:1025 # smtp port
-      - 8025:8025 # web ui port
+#  mailhog:
+#    image: mailhog/mailhog
+#    container_name: mailhog
+#    ports:
+#      - 1025:1025 # smtp port
+#      - 8025:8025 # web ui port

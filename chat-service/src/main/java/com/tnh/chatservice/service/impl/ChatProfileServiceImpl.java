@@ -1,14 +1,14 @@
 package com.tnh.chatservice.service.impl;
 
 import com.tnh.chatservice.repository.ChatProfileRepository;
+import com.tnh.chatservice.utils.exception.InvalidDataException;
+import com.tnh.chatservice.utils.exception.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import com.tnh.chatservice.domain.ChatProfile;
 import com.tnh.chatservice.service.ChatProfileService;
-import pl.kubaretip.exceptionutils.InvalidDataException;
-import pl.kubaretip.exceptionutils.NotFoundException;
 
 import java.util.UUID;
 

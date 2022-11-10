@@ -3,12 +3,12 @@ package com.tnh.chatservice.service.impl;
 import com.tnh.chatservice.repository.ChatProfileRepository;
 import com.tnh.chatservice.repository.FriendRequestRepository;
 import com.tnh.chatservice.service.FriendChatService;
+import com.tnh.chatservice.utils.exception.AlreadyExistsException;
+import com.tnh.chatservice.utils.exception.InvalidDataException;
+import com.tnh.chatservice.utils.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 import com.tnh.chatservice.domain.FriendRequest;
 import com.tnh.chatservice.service.FriendRequestService;
-import pl.kubaretip.exceptionutils.AlreadyExistsException;
-import pl.kubaretip.exceptionutils.InvalidDataException;
-import pl.kubaretip.exceptionutils.NotFoundException;
 
 import java.time.OffsetDateTime;
 import java.util.List;

@@ -2,11 +2,11 @@ package com.tnh.chatservice.web.rest;
 
 import com.tnh.chatservice.messaging.sender.DeleteMessagesSender;
 import com.tnh.chatservice.service.FriendChatService;
+import com.tnh.chatservice.utils.SecurityUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.kubaretip.authutils.SecurityUtils;
 import com.tnh.chatservice.dto.FriendChatDTO;
-import com.tnh.chatservice.dto.mapper.FriendChatMapper;
+import com.tnh.chatservice.mapper.FriendChatMapper;
 
 import java.util.List;
 

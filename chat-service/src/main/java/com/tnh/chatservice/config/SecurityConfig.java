@@ -46,7 +46,6 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-//            .antMatchers(SWAGGER_AUTH_WHITELIST).permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -72,10 +71,10 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
     }
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder() {
+//        return new BCryptPasswordEncoder();
+//    }
 
 //    @Autowired
 //    public KeycloakClientRequestFactory keycloakClientRequestFactory;

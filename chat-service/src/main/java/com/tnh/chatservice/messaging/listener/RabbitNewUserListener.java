@@ -1,10 +1,10 @@
 package com.tnh.chatservice.messaging.listener;
 
+import com.tnh.chatservice.dto.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 import com.tnh.chatservice.service.ChatProfileService;
-import pl.kubaretip.dtomodels.UserDTO;
 
 @Slf4j
 @Component
@@ -17,7 +17,7 @@ public class RabbitNewUserListener {
     }
 
 
-    @RabbitListener(queues = "#{newUsersQueue.name}")
+    @RabbitListener(queues = "#{newUsersQueue.name}", messageConverter = "Jackson2JsonMessageConverter")
     public void receiveNewUser(UserDTO userDTO) {
         log.debug("New user {}", userDTO.getUsername());
         chatProfileService.createChatProfile(userDTO.getId(), userDTO.getUsername());
