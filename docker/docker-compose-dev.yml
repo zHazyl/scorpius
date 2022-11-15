@@ -84,6 +84,7 @@ services:
       DB_DATABASE: keycloak_db
     depends_on:
       - mysql-kc
+#  mongosh "mongodb://localhost:27017" -u chat-messages-service-root -p chat-messages-service-root-pass-123 --authenticationDatabase admin
   messages_db:
     container_name: chat_messages_service_mongo
     image: library/mongo:latest

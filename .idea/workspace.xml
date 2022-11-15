@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/BearerTokenAuthenticator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/KeycloakConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/KeycloakProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/ResolverConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/UserContextInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security/JWTAuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/SecurityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/SecurityUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTConstants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/utils/jwt/JWTUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,6 +60,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3e528605a57df65f0c55f01f9a200e4d&quot;
   }
 }</component>
@@ -272,6 +258,26 @@
       <workItem from="1668070878047" duration="672000" />
       <workItem from="1668071814651" duration="664000" />
       <workItem from="1668073315101" duration="294000" />
+      <workItem from="1668083147212" duration="515000" />
+      <workItem from="1668241605765" duration="166000" />
+      <workItem from="1668241978526" duration="177000" />
+      <workItem from="1668317166984" duration="3462000" />
+      <workItem from="1668321027200" duration="5162000" />
+      <workItem from="1668329214351" duration="146000" />
+      <workItem from="1668332090455" duration="689000" />
+      <workItem from="1668332860219" duration="33000" />
+      <workItem from="1668338587057" duration="16000" />
+      <workItem from="1668349081088" duration="25000" />
+      <workItem from="1668349328164" duration="5000" />
+      <workItem from="1668349339928" duration="47000" />
+      <workItem from="1668349649938" duration="71000" />
+      <workItem from="1668350068950" duration="55000" />
+      <workItem from="1668390679257" duration="1216000" />
+      <workItem from="1668392712299" duration="211000" />
+      <workItem from="1668393267420" duration="5882000" />
+      <workItem from="1668404407648" duration="5565000" />
+      <workItem from="1668422427092" duration="3246000" />
+      <workItem from="1668435954200" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -434,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668062680823</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="up">
+      <created>1668083186510</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1668083186510</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +533,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
           <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController">
+          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="setDeliveredStatusForAllRecipientMessagesInFriendChat">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
