@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="cloud test dev">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
+    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="test cipher">
       <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -285,7 +282,7 @@
       <workItem from="1668484494925" duration="1871000" />
       <workItem from="1668486627155" duration="40000" />
       <workItem from="1668487520733" duration="20000" />
-      <workItem from="1668496052911" duration="5370000" />
+      <workItem from="1668496052911" duration="5775000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -476,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668499690108</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="test cipher">
+      <created>1668502261367</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1668502261367</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +501,8 @@
     <MESSAGE value="up" />
     <MESSAGE value="add real-export.json" />
     <MESSAGE value="cloud test dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="cloud test dev" />
+    <MESSAGE value="test cipher" />
+    <option name="LAST_COMMIT_MESSAGE" value="test cipher" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
