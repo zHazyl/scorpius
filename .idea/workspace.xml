@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="change config">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-messages-service/chat-messages-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-messages-service/chat-messages-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/messages-websocket-service/messages-websocket-docker.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +294,7 @@
       <workItem from="1668524290498" duration="607000" />
       <workItem from="1668547161210" duration="30000" />
       <workItem from="1668548362606" duration="16000" />
-      <workItem from="1668548437210" duration="408000" />
+      <workItem from="1668548437210" duration="1736000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -536,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668548703589</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="change config">
+      <created>1668548848753</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1668548848753</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
