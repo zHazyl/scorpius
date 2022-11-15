@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="dont use cipher" />
+    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="push image">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +21,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -283,6 +285,10 @@
       <workItem from="1668496052911" duration="9262000" />
       <workItem from="1668507143999" duration="206000" />
       <workItem from="1668517587158" duration="109000" />
+      <workItem from="1668521503324" duration="225000" />
+      <workItem from="1668524290498" duration="607000" />
+      <workItem from="1668547161210" duration="30000" />
+      <workItem from="1668548362606" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -508,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668517685189</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="push image">
+      <created>1668521599342</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1668521599342</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +544,8 @@
     <MESSAGE value="cloud test dev" />
     <MESSAGE value="test cipher" />
     <MESSAGE value="dont use cipher" />
-    <option name="LAST_COMMIT_MESSAGE" value="dont use cipher" />
+    <MESSAGE value="push image" />
+    <option name="LAST_COMMIT_MESSAGE" value="push image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
