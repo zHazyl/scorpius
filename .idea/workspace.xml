@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="up" />
+    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="add real-export.json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/realm-export.json" beforeDir="false" afterPath="$PROJECT_DIR$/docker/imports/realm-export.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +76,9 @@
       <recent name="$PROJECT_DIR$/chat-messages-service" />
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/security" />
       <recent name="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker/imports" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.tnh.chatmessagesservice.config" />
@@ -274,7 +283,10 @@
       <workItem from="1668404407648" duration="5565000" />
       <workItem from="1668422427092" duration="3246000" />
       <workItem from="1668435954200" duration="23000" />
-      <workItem from="1668484494925" duration="341000" />
+      <workItem from="1668484494925" duration="1871000" />
+      <workItem from="1668486627155" duration="40000" />
+      <workItem from="1668487520733" duration="20000" />
+      <workItem from="1668496052911" duration="2708000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -451,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668484502767</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add real-export.json">
+      <created>1668484866177</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1668484866177</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +489,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
+    <MESSAGE value="add real-export.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="add real-export.json" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,7 +557,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
           <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="setDeliveredStatusForAllRecipientMessagesInFriendChat">
+          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
