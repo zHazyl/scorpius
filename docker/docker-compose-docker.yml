@@ -1,18 +1,13 @@
 version: '3.8'
 
 volumes:
-  mysql_auth:
-    name: auth_service_vol
-    driver: local
   mongo_chat:
     name: chat_messages_service_vol
-    driver: local
-  mysql_chat:
-    name: chat_service_vol
     driver: local
   rabbitmq:
     name: rabbitmq_vol
     driver: local
+  keycloak-and-mysql-volume:
 
 networks:
   spring-chat-net:
@@ -21,9 +16,7 @@ networks:
 services:
   config-server:
     container_name: config-server
-    build:
-      context: ../config-server
-      dockerfile: Dockerfile
+    image: scorpius/config-server:0.0.1-SNAPSHOT
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
       CONFIG_SERVER_SECRET: ${CONFIG_SERVER_SECRET}
@@ -37,9 +30,7 @@ services:
       - spring-chat-net
   eureka-server:
     container_name: eureka-server
-    build:
-      context: ../eureka-server
-      dockerfile: Dockerfile
+    image: scorpius/eureka-server:0.0.1-SNAPSHOT
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
       CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
@@ -49,9 +40,7 @@ services:
       - spring-chat-net
   cloud-gateway:
     container_name: cloud-gateway
-    build:
-      context: ../cloud-gateway
-      dockerfile: Dockerfile
+    image: scorpius/cloud-gateway:0.0.1-SNAPSHOT
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
       CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
@@ -61,20 +50,7 @@ services:
       - spring-chat-net
   auth-service:
     container_name: auth-service
-    build:
-      context: ../auth-service
-      dockerfile: Dockerfile
-    restart: always
-    environment:
-      SPRING_PROFILES_ACTIVE: ${PROFILE}
-      CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
-    networks:
-      - spring-chat-net
-  mail-service:
-    container_name: mail-service
-    build:
-      context: ../mail-service
-      dockerfile: Dockerfile
+    image: scorpius/auth-service:0.0.1-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
@@ -83,9 +59,7 @@ services:
       - spring-chat-net
   messages-websocket-service:
     container_name: messages-websocket-service
-    build:
-      context: ../messages-websocket-service
-      dockerfile: Dockerfile
+    image: scorpius/messages-websocket-service:0.0.1-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
@@ -94,9 +68,7 @@ services:
       - spring-chat-net
   chat-messages-service:
     container_name: chat-messages-service
-    build:
-      context: ../chat-messages-service
-      dockerfile: Dockerfile
+    image: scorpius/chat-messages-service:0.0.1-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
@@ -105,45 +77,38 @@ services:
       - spring-chat-net
   chat-service:
     container_name: chat-service
-    build:
-      context: ../chat-service
-      dockerfile: Dockerfile
+    image: scorpius/chat-service:0.0.1-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
       CLOUD_CONFIG_URI: ${CONFIG_SERVER_URI}
     networks:
       - spring-chat-net
+  keycloak:
+    image: jboss/keycloak:16.1.0
+    command: ["-Djboss.http.port=8180"]
+    ports:
+      - 8180:8180
+    restart: unless-stopped
+    environment:
+      # User and password for the Administration Console
+      KEYCLOAK_USER: admin
+      KEYCLOAK_IMPORT: /opt/jboss/keycloak/imports/realm-export.json -Dkeycloak.profile.feature.upload_scripts=enabled
+      KEYCLOAK_PASSWORD: admin
+      DB_VENDOR: mysql
+      DB_ADDR: mysql-kc
+      DB_PORT: 3366
+      # Same values as the mysql-kc service
+      DB_USER: keycloak_user
+      DB_PASSWORD: keycloak_password
+      DB_DATABASE: keycloak_db
+    volumes:
+      - ./imports:/opt/jboss/keycloak/imports
+    depends_on:
+      - mysql-kc
+    networks:
+      - spring-chat-net
 #DATABASES
-  auth_db:
-    container_name: auth-service-mysql
-    image: library/mysql:8.0.22
-    environment:
-      MYSQL_DATABASE: auth_service_database
-      MYSQL_USER: ${AUTH_SERVICE_MYSQL_USER}
-      MYSQL_PASSWORD: ${AUTH_SERVICE_MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${AUTH_SERVICE_MYSQL_ROOT_PASS}
-    ports:
-      - 3306:3306
-    networks:
-      - spring-chat-net
-    volumes:
-      - mysql_auth:/var/lib/mysql
-  chat_db:
-    container_name: chat-service-mysql
-    image: library/mysql:8.0.22
-    environment:
-      MYSQL_DATABASE: chat_service_database
-      MYSQL_USER: ${CHAT_SERVICE_MYSQL_USER}
-      MYSQL_PASSWORD: ${CHAT_SERVICE_MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${CHAT_SERVICE_MYSQL_ROOT_PASS}
-      MYSQL_TCP_PORT: 3307
-    ports:
-      - 3307:3307
-    networks:
-      - spring-chat-net
-    volumes:
-      - mysql_chat:/var/lib/mysql
   messages_db:
     container_name: chat-messages-service-mongo
     image: library/mongo:latest
@@ -156,6 +121,24 @@ services:
     volumes:
       - mongo_chat:/var/lib/mongo
       - ./init-chat-messages-service-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - spring-chat-net
+  mysql-kc:
+    image: mysql:8.0.22
+    ports:
+      - 3366:3366
+    restart: unless-stopped
+    environment:
+      # The user, password and database that Keycloak
+      # is going to create and use
+      MYSQL_USER: keycloak_user
+      MYSQL_PASSWORD: keycloak_password
+      MYSQL_DATABASE: keycloak_db
+      MYSQL_TCP_PORT: 3366
+      # Self-Explanatory
+      MYSQL_ROOT_PASSWORD: root_password
+    volumes:
+      - keycloak-and-mysql-volume:/var/lib/mysql
     networks:
       - spring-chat-net
 #RABBIT
@@ -175,12 +158,3 @@ services:
       - rabbitmq:/var/lib/rabbitmq/
       - rabbitmq:/var/log/rabbitmq/
       - ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
-#MAIL
-  mailhog:
-    container_name: mailhog-service
-    image: mailhog/mailhog
-    ports:
-      - 1025:1025 # smtp port
-      - 8025:8025 # web ui port
-    networks:
-      - spring-chat-net
