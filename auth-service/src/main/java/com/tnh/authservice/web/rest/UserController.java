@@ -12,7 +12,6 @@ import com.tnh.authservice.service.UserService;
 import com.tnh.authservice.utils.SecurityUtils;
 import com.tnh.authservice.utils.exception.InvalidDataException;
 //import com.tnh.authservice.utils.security.SecurityUserDetails;
-import com.tnh.authservice.web.model.ChangePassRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.UsersResource;
