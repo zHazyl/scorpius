@@ -116,7 +116,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(tokenResponse);
         } catch (BadRequestException ex) {
 
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(tokenResponse);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(tokenResponse);
         }
     }
 

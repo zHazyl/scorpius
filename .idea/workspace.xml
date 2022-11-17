@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="change config">
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -289,7 +290,10 @@
       <workItem from="1668524290498" duration="607000" />
       <workItem from="1668547161210" duration="30000" />
       <workItem from="1668548362606" duration="16000" />
-      <workItem from="1668548437210" duration="6262000" />
+      <workItem from="1668548437210" duration="6363000" />
+      <workItem from="1668560163686" duration="226000" />
+      <workItem from="1668567718572" duration="25000" />
+      <workItem from="1668588804803" duration="621000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -585,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668557175125</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="change config">
+      <created>1668557441600</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1668557441600</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
