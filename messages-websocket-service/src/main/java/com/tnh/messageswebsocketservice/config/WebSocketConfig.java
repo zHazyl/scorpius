@@ -36,6 +36,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                            @Value("${websocket.rabbitmq.stomp.clientPasscode:guest}") String clientPasscode,
                            @Value("${websocket.rabbitmq.stomp.systemLogin:guest}") String systemLogin,
                            @Value("${websocket.rabbitmq.stomp.systemPasscode:guest}") String systemPasscode,
+                           //Port receive and pass on (information or a message)
                            @Value("${websocket.rabbitmq.stomp.relayPort:61613}") int relayPort,
                            @Value("${websocket.rabbitmq.stomp.relayHost:127.0.0.1}") String relayHost) {
         this.authChannelInterceptor = authChannelInterceptor;

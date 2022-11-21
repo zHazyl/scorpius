@@ -82,11 +82,6 @@ public class UserController {
         return ResponseEntity.created(location).body(userMapper.mapToUserDTOWithoutActivationKey(user));
     }
 
-//    @PatchMapping("/activate")
-//    public ResponseEntity<Void> activateAccount(@RequestParam("data") String activationKey) {
-//        userService.
-//    }
-
     @GetMapping("/{id}")
     public ResponseEntity<UserDTO> getUserById(@PathVariable("id") String userId) {
         var usersResource = keycloakProvider.getInstance().realm(keycloakProvider.getRealm()).users().get(userId);
@@ -105,15 +100,17 @@ public class UserController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<TokenResponse> login(@NotNull @RequestBody AuthRequestModel authRequestModel) {
-        Keycloak keycloak = keycloakProvider.newKeycloakBuilderWithPasswordCredentials(authRequestModel.getUsername(), authRequestModel.getPassword()).build();
 
-        AccessTokenResponse accessTokenResponse = null;
+
         TokenResponse tokenResponse = null;
         try {
+            Keycloak keycloak = keycloakProvider.newKeycloakBuilderWithPasswordCredentials(authRequestModel.getUsername(), authRequestModel.getPassword()).build();
+
+            AccessTokenResponse accessTokenResponse = null;
             accessTokenResponse = keycloak.tokenManager().getAccessToken();
             tokenResponse = new TokenResponse(accessTokenResponse.getToken());
             return ResponseEntity.status(HttpStatus.OK).body(tokenResponse);
-        } catch (BadRequestException ex) {
+        } catch (Exception ex) {
 
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(tokenResponse);
         }
