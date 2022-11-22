@@ -26,5 +26,5 @@ public class ChatMessage {
     private String content;
     private Date time;
     private MessageStatus status;
-
+    private String type;
 }

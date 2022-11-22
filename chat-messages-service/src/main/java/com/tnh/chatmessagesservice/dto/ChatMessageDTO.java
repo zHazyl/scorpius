@@ -21,5 +21,6 @@ public class ChatMessageDTO implements Serializable {
     private String content;
     private String time;
     private String status;
+    private String type;
 
 }

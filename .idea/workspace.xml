@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="change config">
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" />
+    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="dev">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/document/ChatMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/document/ChatMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/dto/ChatMessageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/dto/ChatMessageDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/messaging/listener/RabbitMessageStoringListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/messaging/listener/RabbitMessageStoringListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,6 +299,9 @@
       <workItem from="1668567718572" duration="25000" />
       <workItem from="1668588804803" duration="621000" />
       <workItem from="1668669568865" duration="512000" />
+      <workItem from="1669005626298" duration="133000" />
+      <workItem from="1669011202708" duration="48000" />
+      <workItem from="1669079842965" duration="1462000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -634,7 +636,8 @@
     <MESSAGE value="dont use cipher" />
     <MESSAGE value="push image" />
     <MESSAGE value="change config" />
-    <option name="LAST_COMMIT_MESSAGE" value="change config" />
+    <MESSAGE value="dev" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -675,11 +678,6 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/messaging/sender/UserSender.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/utils/SecurityUtils.java</url>
           <line>20</line>
           <option name="timeStamp" value="28" />
@@ -688,24 +686,6 @@
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java</url>
           <line>41</line>
           <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
-          <line>22</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="getLastUsersMessagesFromTimeWithSize">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
-          <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -32,7 +32,7 @@ public class ChatMessageServiceImpl implements ChatMessageService {
     }
 
     @Override
-    public Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time) {
+    public Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time, String type) {
 
         return Mono.just(new ChatMessage())
                 .flatMap(chatMessage -> {
@@ -63,6 +63,7 @@ public class ChatMessageServiceImpl implements ChatMessageService {
                     chatMessage.setFriendChat(friendChat);
                     chatMessage.setRecipient(recipient);
                     chatMessage.setSender(sender);
+                    chatMessage.setType(type);
                     return Mono.just(chatMessage);
                 })
                 .flatMap(chatMessageRepository::save);

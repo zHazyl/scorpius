@@ -15,7 +15,7 @@ public interface ChatMessageService {
 
     Mono<Void> setDeliveredStatusForAllRecipientMessagesInFriendChat(long friendChatId, String currentUser);
 
-    Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time);
+    Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time, String type);
 
     Mono<Void> removeMessagesByFriendChat(List<Long> ids);
 }
