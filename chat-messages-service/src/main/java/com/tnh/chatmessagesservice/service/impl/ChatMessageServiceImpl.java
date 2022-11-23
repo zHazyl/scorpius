@@ -36,9 +36,9 @@ public class ChatMessageServiceImpl implements ChatMessageService {
 
         return Mono.just(new ChatMessage())
                 .flatMap(chatMessage -> {
-                    if (StringUtils.isEmpty(content)) {
-                        return Mono.error(new InvalidDataException("Can not save empty message"));
-                    }
+//                    if (StringUtils.isEmpty(content)) {
+//                        return Mono.error(new InvalidDataException("Can not save empty message"));
+//                    }
 
                     if (friendChat == null) {
                         return Mono.error(new InvalidDataException("Can not save message with empty friend chat field"));
