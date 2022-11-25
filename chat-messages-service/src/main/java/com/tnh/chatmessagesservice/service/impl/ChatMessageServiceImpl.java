@@ -32,13 +32,13 @@ public class ChatMessageServiceImpl implements ChatMessageService {
     }
 
     @Override
-    public Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time) {
+    public Mono<ChatMessage> saveChatMessage(Long friendChat, String sender, String recipient, String content, String time, String type) {
 
         return Mono.just(new ChatMessage())
                 .flatMap(chatMessage -> {
-                    if (StringUtils.isEmpty(content)) {
-                        return Mono.error(new InvalidDataException("Can not save empty message"));
-                    }
+//                    if (StringUtils.isEmpty(content)) {
+//                        return Mono.error(new InvalidDataException("Can not save empty message"));
+//                    }
 
                     if (friendChat == null) {
                         return Mono.error(new InvalidDataException("Can not save message with empty friend chat field"));
@@ -63,6 +63,7 @@ public class ChatMessageServiceImpl implements ChatMessageService {
                     chatMessage.setFriendChat(friendChat);
                     chatMessage.setRecipient(recipient);
                     chatMessage.setSender(sender);
+                    chatMessage.setType(type);
                     return Mono.just(chatMessage);
                 })
                 .flatMap(chatMessageRepository::save);

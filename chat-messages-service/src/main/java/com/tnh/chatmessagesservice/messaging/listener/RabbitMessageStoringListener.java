@@ -20,7 +20,8 @@ public class RabbitMessageStoringListener {
                 chatMessageDTO.getSender(),
                 chatMessageDTO.getRecipient(),
                 chatMessageDTO.getContent(),
-                chatMessageDTO.getTime()).subscribe();
+                chatMessageDTO.getTime(),
+                chatMessageDTO.getType()).subscribe();
     }
 
 }
