@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="dev">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/web/rest/UserController.java" afterDir="false" />
+    <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice">
       <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/java/com/tnh/messageswebsocketservice/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -632,7 +628,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668688411895</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="dev chatservice">
+      <created>1669369311687</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1669369311687</updated>
+    </task>
+    <task id="LOCAL-00048" summary="dev chatservice">
+      <created>1669369347124</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1669369347124</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,7 +668,8 @@
     <MESSAGE value="push image" />
     <MESSAGE value="change config" />
     <MESSAGE value="dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev" />
+    <MESSAGE value="dev chatservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev chatservice" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -711,7 +722,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
           <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController">
+          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="setDeliveredStatusForAllRecipientMessagesInFriendChat">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
