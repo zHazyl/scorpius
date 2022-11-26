@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -720,15 +730,6 @@
           <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/SecurityConfig.java</url>
           <line>41</line>
           <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java</url>
-          <line>34</line>
-          <properties class="com.tnh.chatmessagesservice.web.rest.ChatMessageController" method="setDeliveredStatusForAllRecipientMessagesInFriendChat">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

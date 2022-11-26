@@ -93,11 +93,39 @@ public class ChatMessageServiceImpl implements ChatMessageService {
                 );
     }
 
+    @Override
+    public Flux<ChatMessage> findLastGroupMessagesFromTime(long groupId, String beforeTime, int numberOfMessagesToFetch) {
+        return Mono.just(beforeTime)
+                .flatMap(beforeTimeInString -> {
+                    try {
+                        var localDateTime = LocalDateTime.parse(beforeTime, DateTimeFormatter.ofPattern(DateConstants.UTC_DATE_FORMAT));
+                        return Mono.just(Date.from(localDateTime.toInstant(ZoneOffset.UTC)));
+                    } catch (DateTimeParseException ex) {
+                        return Mono.error(new InvalidDataException("Time format should be in UTC"));
+                    }
+                }).
+                flatMapMany(formattedDate -> {
+                    var sortedByTimeDescWithSize = PageRequest.of(0, numberOfMessagesToFetch, Sort.by("time").descending());
+                    return chatMessageRepository
+                            .findByTimeLessThanAndRecipientIn(
+                                    formattedDate,
+                                    Long.toString(groupId),
+                                    sortedByTimeDescWithSize
+                            );
+                });
+    }
+
 
     @Override
     public Flux<ChatMessage> getLastUserMessages(long friendChatId1, long friendChatId2, int numberOfMessagesToFetch) {
         var sortedByTimeDescWithSize = PageRequest.of(0, numberOfMessagesToFetch, Sort.by("time").descending());
         return chatMessageRepository.findByFriendChatOrFriendChat(friendChatId1, friendChatId2, sortedByTimeDescWithSize);
+    }
+
+    @Override
+    public Flux<ChatMessage> getLastGroupMessages(long groupId, int numberOfMessagesToFetch) {
+        var sortedByTimeDescWithSize = PageRequest.of(0, numberOfMessagesToFetch, Sort.by("time").descending());
+        return chatMessageRepository.findByRecipient(Long.toString(groupId), sortedByTimeDescWithSize);
     }
 
     @Override

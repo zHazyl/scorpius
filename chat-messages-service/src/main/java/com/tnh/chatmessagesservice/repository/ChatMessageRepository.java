@@ -16,9 +16,16 @@ public interface ChatMessageRepository extends ReactiveCrudRepository<ChatMessag
 
     Flux<ChatMessage> findByTimeLessThanAndFriendChatIn(Date time, Collection<Long> ids, Pageable pageable);
 
+    Flux<ChatMessage> findByTimeLessThanAndRecipientIn(Date time, String recipient, Pageable pageable);
+
     Flux<ChatMessage> findByFriendChatOrFriendChat(long firstUserChatId, long secondUserChatId, Pageable pageable);
+
+    Flux<ChatMessage> findByRecipient(String recipient, Pageable pageable);
 
     Flux<ChatMessage> findByFriendChatAndRecipientAndStatus(long friendChatId, String userId, MessageStatus status);
 
+    Flux<ChatMessage> findBySenderAndRecipientAndStatus(String sender, String recipient, MessageStatus status);
+
     Mono<Void> deleteByFriendChatIn(List<Long> ids);
 }
+

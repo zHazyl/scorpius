@@ -31,6 +31,17 @@ public class ChatMessageController {
         }
     }
 
+    @GetMapping("/group")
+    public Flux<ChatMessage> getLastGroupMessagesFromTimeWithSize(@RequestParam("group_id") long group_id,
+                                                                 @RequestParam(value = "from", required = false) String fromTime,
+                                                                 @RequestParam("size") int numberOfMessagesToFetch) {
+        if (fromTime != null) {
+            return chatMessageService.findLastGroupMessagesFromTime(group_id, fromTime, numberOfMessagesToFetch);
+        } else {
+            return chatMessageService.getLastGroupMessages(group_id, numberOfMessagesToFetch);
+        }
+    }
+
     @PatchMapping(params = "friend_chat_id")
     public Mono<Void> setDeliveredStatusForAllRecipientMessagesInFriendChat(@RequestParam("friend_chat_id") long friendChatId) {
         return SecurityUtils.getCurrentUser()
