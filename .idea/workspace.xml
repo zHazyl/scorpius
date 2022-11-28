@@ -6,11 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/com/tnh/authservice/web/rest/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/repository/ChatMessageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/ChatMessageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/service/impl/ChatMessageServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/web/rest/ChatMessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupChatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupMemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupChatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupMemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupMemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupMemberController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3e528605a57df65f0c55f01f9a200e4d&quot;
+    &quot;spring.configuration.checksum&quot;: &quot;97a2b99663461096d93c835d19ba296d&quot;
   }
 }</component>
   <component name="ReactorSettings">
@@ -216,7 +219,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="09d422d0-a78a-42b8-af8e-89c2111cf8c8" name="Changes" comment="" />
+      <changelist id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice" />
       <created>1667291550371</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -317,6 +320,16 @@
       <workItem from="1668783143016" duration="2630000" />
       <workItem from="1668817258529" duration="7512000" />
       <workItem from="1668993774563" duration="1745000" />
+      <workItem from="1669441253955" duration="6655000" />
+      <workItem from="1669457879667" duration="7000" />
+      <workItem from="1669475206618" duration="223000" />
+      <workItem from="1669545828907" duration="497000" />
+      <workItem from="1669558347912" duration="63000" />
+      <workItem from="1669560292254" duration="130000" />
+      <workItem from="1669586609925" duration="1320000" />
+      <workItem from="1669589115766" duration="12000" />
+      <workItem from="1669589469146" duration="703000" />
+      <workItem from="1669596887507" duration="699000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1667373813640</created>
@@ -654,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669369347124</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="dev chatservice">
+      <created>1669430654279</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669430654279</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

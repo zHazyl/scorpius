@@ -10,4 +10,6 @@ public interface GroupChatService {
     GroupChat getGroupChatById(Long id);
 
     List<GroupChat> getAllGroupsChatsByMember(String currentUser);
+
+    void deleteGroupChat(Long id);
 }

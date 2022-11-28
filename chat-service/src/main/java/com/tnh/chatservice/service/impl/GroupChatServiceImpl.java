@@ -69,4 +69,9 @@ public class GroupChatServiceImpl implements GroupChatService {
 
         return groups;
     }
+
+    @Override
+    public void deleteGroupChat(Long id) {
+        this.groupChatRepository.deleteGroupChatById(id);
+    }
 }

@@ -46,5 +46,18 @@ public class GroupMemberController {
 
     }
 
+    @DeleteMapping(params = {"group_id", "member_id"})
+    public ResponseEntity<Void> deleteUserFriendChat(@RequestParam("group_id") long groupId,
+                                                     @RequestParam("member_id") String memberId) {
+        if (this.groupMemberService.isAdmin(groupId, SecurityUtils.getCurrentUser())
+        || memberId == SecurityUtils.getCurrentUser()) {
+            groupMemberService.deleteMember(groupId, memberId);
+        } else {
+            throw new InvalidDataException("You're not admin");
+        }
+//        deleteMessagesSender.sendDeletingMessagesTask(List.of(friendChatId, friendChatWithId));
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

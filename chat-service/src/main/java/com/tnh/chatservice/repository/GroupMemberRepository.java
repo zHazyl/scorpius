@@ -24,4 +24,8 @@ public interface GroupMemberRepository extends JpaRepository<GroupMember, Long> 
 
     GroupMember findGroupMemberByGroupAndMember(GroupChat groupChat, ChatProfile member);
 
+    void deleteGroupMemberByGroupAndMember(GroupChat groupChat, ChatProfile member);
+
+    void deleteGroupMemberByGroup(GroupChat groupChat);
+
 }

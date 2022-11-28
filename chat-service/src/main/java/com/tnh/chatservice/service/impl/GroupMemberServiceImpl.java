@@ -44,7 +44,8 @@ public class GroupMemberServiceImpl implements GroupMemberService {
         var groupMember = new GroupMember();
         groupMember.setGroup(groupChatRepository.getGroupChatById(group));
 
-        if (groupMemberRepository.existsGroupMemberByGroupAndMember(groupMember.getGroup(), groupMember.getMember())) {
+        if (groupMemberRepository.existsGroupMemberByGroupAndMember(
+                groupMember.getGroup(), groupMember.getMember())) {
             throw new AlreadyExistsException("This person has already been member");
         }
 
@@ -58,7 +59,8 @@ public class GroupMemberServiceImpl implements GroupMemberService {
     @Override
     public List<GroupMember> getAllGroupsMembersByGroup(Long group) {
         try{
-            return this.groupMemberRepository.findByGroup(groupChatRepository.getGroupChatById(group));
+            return this.groupMemberRepository.findByGroup(
+                    groupChatRepository.getGroupChatById(group));
         } catch (Exception e) {
             throw new NotFoundException("This group is not found");
         }
@@ -67,7 +69,8 @@ public class GroupMemberServiceImpl implements GroupMemberService {
     @Override
     public List<GroupMember> getAllGroupsMembersByMember(String currentUser) {
         try{
-            return this.groupMemberRepository.findByMember(chatProfileService.getChatProfileById(currentUser));
+            return this.groupMemberRepository.findByMember(
+                    chatProfileService.getChatProfileById(currentUser));
         } catch (Exception e) {
             throw new NotFoundException("This user " + currentUser + " is not found");
         }
@@ -79,5 +82,18 @@ public class GroupMemberServiceImpl implements GroupMemberService {
                 groupChatRepository.getGroupChatById(group),
                 chatProfileService.getChatProfileById(member));
         return mem.isAdmin();
+    }
+
+    @Override
+    public void deleteMember(long groupId, String memberId) {
+        this.groupMemberRepository.deleteGroupMemberByGroupAndMember(
+                groupChatRepository.getGroupChatById(groupId),
+                chatProfileService.getChatProfileById(memberId));
+    }
+
+    @Override
+    public void deleteMemberByGroup(long groupId) {
+        this.groupMemberRepository.deleteGroupMemberByGroup(
+                groupChatRepository.getGroupChatById(groupId));
     }
 }

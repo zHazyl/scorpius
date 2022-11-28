@@ -5,6 +5,7 @@ import com.tnh.chatservice.mapper.GroupChatMapper;
 import com.tnh.chatservice.service.GroupChatService;
 import com.tnh.chatservice.service.GroupMemberService;
 import com.tnh.chatservice.utils.SecurityUtils;
+import com.tnh.chatservice.utils.exception.InvalidDataException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +42,16 @@ public class GroupChatController {
         var group = groupChatService.createGroupChat(groupChatDTO.getGroupName());
         groupMemberService.createGroupMember(group.getId(), SecurityUtils.getCurrentUser(), true);
         return groupChatMapper.mapToGroupChatDTO(group);
+    }
+
+    @DeleteMapping(params = {"group_id"})
+    public ResponseEntity<Void> deleteGroupChat(@RequestParam("group_id") long groupId) {
+        if (this.groupMemberService.isAdmin(groupId, SecurityUtils.getCurrentUser())) {
+            this.groupMemberService.deleteMemberByGroup(groupId);
+        } else {
+            throw new InvalidDataException("You're not admin");
+        }
+        return ResponseEntity.noContent().build();
     }
 
 }
