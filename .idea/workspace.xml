@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupChatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupMemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupMemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupMemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/GroupMemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupChatServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupMemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/GroupMemberServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupMemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupMemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +30,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -329,14 +325,15 @@
       <workItem from="1669586609925" duration="1320000" />
       <workItem from="1669589115766" duration="12000" />
       <workItem from="1669589469146" duration="703000" />
-      <workItem from="1669596887507" duration="699000" />
-    </task>
-    <task id="LOCAL-00001" summary="up">
-      <created>1667373813640</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1667373813640</updated>
+      <workItem from="1669596887507" duration="2373000" />
+      <workItem from="1670049230689" duration="57000" />
+      <workItem from="1670133292846" duration="35000" />
+      <workItem from="1670185152118" duration="3412000" />
+      <workItem from="1670203172009" duration="1171000" />
+      <workItem from="1670212957813" duration="35000" />
+      <workItem from="1670218191439" duration="619000" />
+      <workItem from="1670227764472" duration="158000" />
+      <workItem from="1670275417082" duration="2076000" />
     </task>
     <task id="LOCAL-00002" summary="up">
       <created>1667377671875</created>
@@ -674,7 +671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669430654279</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="dev chatservice">
+      <created>1669597627750</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669597627751</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
