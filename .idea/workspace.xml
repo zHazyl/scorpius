@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="dev chatservice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/auth-service/auth-docker.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/scorpius-config/files/service/chat-service/chat-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/docker-compose-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/docker-compose-docker.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +27,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/scorpius-config" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -333,14 +330,8 @@
       <workItem from="1670212957813" duration="35000" />
       <workItem from="1670218191439" duration="619000" />
       <workItem from="1670227764472" duration="158000" />
-      <workItem from="1670275417082" duration="2076000" />
-    </task>
-    <task id="LOCAL-00002" summary="up">
-      <created>1667377671875</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1667377671875</updated>
+      <workItem from="1670275417082" duration="2291000" />
+      <workItem from="1670284846725" duration="1867000" />
     </task>
     <task id="LOCAL-00003" summary="up">
       <created>1667388094883</created>
@@ -678,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669597627751</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="dev chatservice">
+      <created>1670283552315</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1670283552315</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
