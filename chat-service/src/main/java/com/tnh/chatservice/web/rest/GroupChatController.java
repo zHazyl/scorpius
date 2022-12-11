@@ -48,6 +48,7 @@ public class GroupChatController {
     public ResponseEntity<Void> deleteGroupChat(@RequestParam("group_id") long groupId) {
         if (this.groupMemberService.isAdmin(groupId, SecurityUtils.getCurrentUser())) {
             this.groupMemberService.deleteMemberByGroup(groupId);
+            this.groupChatService.deleteGroupChat(groupId);
         } else {
             throw new InvalidDataException("You're not admin");
         }

@@ -7,12 +7,14 @@ import com.tnh.chatservice.service.GroupMemberService;
 import com.tnh.chatservice.utils.exception.InvalidDataException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class GroupChatServiceImpl implements GroupChatService {
 
     private final GroupChatRepository groupChatRepository;
