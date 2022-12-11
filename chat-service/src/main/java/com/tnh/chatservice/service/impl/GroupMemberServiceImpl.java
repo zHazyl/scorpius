@@ -10,11 +10,13 @@ import com.tnh.chatservice.service.GroupMemberService;
 import com.tnh.chatservice.utils.exception.AlreadyExistsException;
 import com.tnh.chatservice.utils.exception.NotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class GroupMemberServiceImpl implements GroupMemberService {
 
     private final GroupMemberRepository groupMemberRepository;
