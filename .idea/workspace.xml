@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="update redis info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/domain/UserRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/domain/UserRedis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/repository/UserRedisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/tnh/authservice/repository/UserRedisRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -340,13 +337,6 @@
       <workItem from="1670507824724" duration="4236000" />
       <workItem from="1670717860134" duration="1597000" />
       <workItem from="1671021044011" duration="2201000" />
-    </task>
-    <task id="LOCAL-00011" summary="up">
-      <created>1667821432409</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1667821432409</updated>
     </task>
     <task id="LOCAL-00012" summary="up">
       <created>1667821670937</created>
@@ -684,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671013556948</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="update redis info">
+      <created>1671024150837</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1671024150837</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
