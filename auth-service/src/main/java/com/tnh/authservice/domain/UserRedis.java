@@ -17,6 +17,7 @@ import java.io.Serializable;
 public class UserRedis implements Serializable {
 
     @Id
+    private String username;
     private String email;
     private String firstName;
     private String lastName;
