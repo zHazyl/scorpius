@@ -2,6 +2,7 @@ package com.tnh.chatservice.service.impl;
 
 
 import com.tnh.chatservice.repository.ChatProfileRepository;
+import com.tnh.chatservice.repository.FriendChatRedisRepository;
 import com.tnh.chatservice.repository.FriendChatRepository;
 import com.tnh.chatservice.repository.FriendRequestRepository;
 import com.tnh.chatservice.utils.exception.AlreadyExistsException;
@@ -13,6 +14,7 @@ import com.tnh.chatservice.domain.FriendChat;
 import com.tnh.chatservice.service.FriendChatService;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,13 +23,16 @@ import java.util.UUID;
 public class FriendChatServiceImpl implements FriendChatService {
 
     private final FriendChatRepository friendChatRepository;
+    private final FriendChatRedisRepository friendChatRedisRepository;
     private final ChatProfileRepository chatProfileRepository;
     private final FriendRequestRepository friendRequestRepository;
 
     public FriendChatServiceImpl(FriendChatRepository friendChatRepository,
+                                 FriendChatRedisRepository friendChatRedisRepository,
                                  ChatProfileRepository chatProfileRepository,
                                  FriendRequestRepository friendRequestRepository) {
         this.friendChatRepository = friendChatRepository;
+        this.friendChatRedisRepository = friendChatRedisRepository;
         this.chatProfileRepository = chatProfileRepository;
         this.friendRequestRepository = friendRequestRepository;
     }
@@ -61,9 +66,23 @@ public class FriendChatServiceImpl implements FriendChatService {
 
     @Override
     public List<FriendChat> getAllFriendsChatsBySender(String currentUserId) {
-        return chatProfileRepository.findById(UUID.fromString(currentUserId))
+        List<FriendChat> friendChats = new ArrayList<>();
+        try {
+            friendChats = friendChatRedisRepository.findAllBySender(currentUserId);
+            if (!friendChats.isEmpty()) {
+                return friendChats;
+            }
+        } catch (Exception e) {
+
+        }
+
+        friendChats = chatProfileRepository.findById(UUID.fromString(currentUserId))
                 .map(friendChatRepository::findBySender)
                 .orElseThrow(() -> new NotFoundException("User with id " + currentUserId + " not found"));
+        friendChats.forEach(friendChat -> {
+            friendChatRedisRepository.save(friendChat);
+        });
+        return friendChats;
     }
 
     @Transactional
@@ -74,6 +93,13 @@ public class FriendChatServiceImpl implements FriendChatService {
                 .orElseThrow(() -> new NotFoundException("Friend chat not found"));
         friendRequestRepository.deleteFriendRequestByChatProfiles(friendChat.getSender(), friendChat.getRecipient());
         friendChatRepository.delete(friendChat);
+        friendChatRedisRepository.deleteFriendChat(friendChat);
+        FriendChat swap = new FriendChat();
+        swap.setChatWith(friendChat);
+        swap.setId(friendChatId);
+        swap.setSender(friendChat.getRecipient());
+        swap.setRecipient(friendChat.getSender());
+        friendChatRedisRepository.deleteFriendChat(swap);
     }
 
 

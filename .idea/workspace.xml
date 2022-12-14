@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="fix delete">
-      <change afterPath="$PROJECT_DIR$/chat-messages-service/src/main/java/com/tnh/chatmessagesservice/config/RedisConfig.java" afterDir="false" />
+    <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="update redis info">
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/domain/FriendChatRedis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/domain/GroupChatRedis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/domain/GroupMemberRedis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/FriendChatRedisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupChatRedisRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/GroupMemberRedisRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/classes/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/classes/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/FriendChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/FriendChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="redis-fix" />
+        <entry key="$PROJECT_DIR$" value="docker" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -132,13 +149,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChatServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="chat-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.kubaretip.chatservice.ChatServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CloudGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cloud-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.tnh.cloudgateway.CloudGatewayApplication" />
@@ -189,7 +199,6 @@
     <list>
       <item itemvalue="Spring Boot.ChatMessagesServiceApplication" />
       <item itemvalue="Spring Boot.ChatMessagesServiceApplication (1)" />
-      <item itemvalue="Spring Boot.ChatServiceApplication" />
       <item itemvalue="Spring Boot.ChatServiceApplication (1)" />
       <item itemvalue="Spring Boot.MessagesWebSocketServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
@@ -336,13 +345,6 @@
       <workItem from="1670507824724" duration="4236000" />
       <workItem from="1670717860134" duration="1597000" />
       <workItem from="1671021044011" duration="2201000" />
-    </task>
-    <task id="LOCAL-00012" summary="up">
-      <created>1667821670937</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1667821670937</updated>
     </task>
     <task id="LOCAL-00013" summary="up">
       <created>1667821830029</created>
@@ -680,7 +682,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671024150837</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="update redis info">
+      <created>1671025517312</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1671025517312</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
