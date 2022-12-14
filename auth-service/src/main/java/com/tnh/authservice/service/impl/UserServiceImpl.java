@@ -3,6 +3,7 @@ package com.tnh.authservice.service.impl;
 import com.tnh.authservice.config.KeycloakProvider;
 import com.tnh.authservice.constants.ApplicationConstants;
 import com.tnh.authservice.domain.User;
+import com.tnh.authservice.repository.UserRedisRepository;
 import com.tnh.authservice.repository.UserRepository;
 import com.tnh.authservice.service.KeycloakAdminClientService;
 import com.tnh.authservice.service.UserService;
@@ -27,13 +28,16 @@ import static org.apache.commons.lang.StringUtils.*;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+
+    private final UserRedisRepository userRedisRepository;
     private final PasswordEncoder passwordEncoder;
     private final KeycloakProvider keycloakProvider;
     private final KeycloakAdminClientService keycloakAdminClientService;
 
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, KeycloakProvider keycloakProvider, KeycloakAdminClientService keycloakAdminClientService) {
+    public UserServiceImpl(UserRepository userRepository, UserRedisRepository userRedisRepository, PasswordEncoder passwordEncoder, KeycloakProvider keycloakProvider, KeycloakAdminClientService keycloakAdminClientService) {
         this.userRepository = userRepository;
+        this.userRedisRepository = userRedisRepository;
         this.passwordEncoder = passwordEncoder;
         this.keycloakProvider = keycloakProvider;
         this.keycloakAdminClientService = keycloakAdminClientService;
@@ -92,9 +96,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserByEmail(String userEmail) {
+        User user = null;
         try {
-            return userRepository.findByEmail(userEmail);
-        }catch (Exception e) {
+            user = userRedisRepository.findUserByEmail(userEmail);
+        } catch (Exception e) {
+
+        }
+        if (user != null) {
+            return user;
+        }
+
+        try {
+            user = userRepository.findByEmail(userEmail);
+            userRedisRepository.save(user);
+            return user;
+        } catch (Exception e) {
             throw new NotFoundException("Not found user with id " + userEmail);
         }
     }
@@ -111,6 +127,13 @@ public class UserServiceImpl implements UserService {
 
         if (isNotEmpty(lastName)) {
             user.setLastName(StringUtils.capitalize(lastName.toLowerCase().replaceAll(" ", "")));
+        }
+
+        try {
+            userRedisRepository.deleteUser(email);
+            userRedisRepository.save(user);
+        } catch (Exception e) {
+
         }
 
         return userRepository.save(user);
