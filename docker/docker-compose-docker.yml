@@ -57,7 +57,7 @@ services:
       - spring-chat-net
   auth-service:
     container_name: auth-service
-    image: zhazy/auth-service:0.0.4-SNAPSHOT
+    image: zhazy/auth-service:0.0.5-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
