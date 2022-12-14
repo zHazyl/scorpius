@@ -19,9 +19,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(schema = "auth_service_database")
 @Entity
-@AllArgsConstructor
-@RedisHash("User")
-public class User implements Serializable {
+public class User {
 
     @Id
     @GeneratedValue(generator = "uuid2")

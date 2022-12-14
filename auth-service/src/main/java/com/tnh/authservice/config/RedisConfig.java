@@ -14,7 +14,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-//@EnableRedisRepositories
+@EnableRedisRepositories
 public class RedisConfig {
 
     @Bean
