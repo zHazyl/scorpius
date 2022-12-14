@@ -40,8 +40,8 @@ public class RedisConfig {
         template.setHashKeySerializer(new JdkSerializationRedisSerializer());
         template.setValueSerializer(new JdkSerializationRedisSerializer());
         template.setEnableTransactionSupport(true);
-        template.expire("User", 15, TimeUnit.DAYS);
         template.afterPropertiesSet();
+        template.expire("UserRedis", 15, TimeUnit.DAYS);
         return template;
     }
 

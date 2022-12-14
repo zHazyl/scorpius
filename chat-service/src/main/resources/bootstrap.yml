@@ -3,5 +3,5 @@ spring:
     config:
       name: commons, chat
       uri: http://localhost:8888
-  profiles:
-    active: dev
+#  profiles:
+#    active: dev
