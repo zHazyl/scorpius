@@ -92,11 +92,11 @@ public class FriendChatServiceImpl implements FriendChatService {
                 .orElseThrow(() -> new NotFoundException("Friend chat not found"));
         friendRequestRepository.deleteFriendRequestByChatProfiles(friendChat.getSender(), friendChat.getRecipient());
         friendChatRedisRepository.deleteFriendChat(
-                friendChat.getSender().toString(),
+                friendChat.getSender().getUserId().toString(),
                 Long.toString(friendChatId)
         );
         friendChatRedisRepository.deleteFriendChat(
-                friendChat.getRecipient().toString(),
+                friendChat.getRecipient().getUserId().toString(),
                 Long.toString(friendChatWithId)
         );
         friendChatRepository.delete(friendChat);
