@@ -1,5 +1,7 @@
 package com.tnh.chatservice.web.rest;
 
+import com.tnh.chatservice.domain.FriendChatRedis;
+import com.tnh.chatservice.dto.ChatProfileDTO;
 import com.tnh.chatservice.messaging.sender.DeleteMessagesSender;
 import com.tnh.chatservice.service.FriendChatService;
 import com.tnh.chatservice.utils.SecurityUtils;
@@ -28,6 +30,25 @@ public class FriendChatController {
 
     @GetMapping
     public ResponseEntity<List<FriendChatDTO>> getAllFriendsChats() {
+
+        List<FriendChatRedis> friendChatRedisList = null;
+
+        try {
+            friendChatRedisList = friendChatService.getAllFriendChatsRedisBySender(SecurityUtils.getCurrentUser());
+            if (!friendChatRedisList.isEmpty()) {
+                return ResponseEntity.ok((List<FriendChatDTO>) friendChatRedisList.stream().map(friendChatRedis -> {
+                    FriendChatDTO friendChatDTO = new FriendChatDTO();
+                    friendChatDTO.setId(friendChatRedis.getId());
+                    friendChatDTO.setChatWith(friendChatRedis.getChatWith());
+                    ChatProfileDTO chatProfileDTO = new ChatProfileDTO();
+                    chatProfileDTO.setUserId(friendChatRedis.getRecipient());
+                    friendChatDTO.setRecipient(chatProfileDTO);
+                    return friendChatDTO;
+                }));
+            }
+        } catch (Exception e) {
+
+        }
 
         var allFriendsChatsBySender = friendChatService.getAllFriendsChatsBySender(SecurityUtils.getCurrentUser());
 

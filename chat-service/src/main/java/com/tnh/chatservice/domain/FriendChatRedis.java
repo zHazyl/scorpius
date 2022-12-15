@@ -15,8 +15,8 @@ import java.io.Serializable;
 @RedisHash("FriendChatRedis")
 public class FriendChatRedis implements Serializable {
     @Id
-    private String id;
-    private String chatWith;
+    private Long id;
+    private Long chatWith;
     private String sender;
     private String recipient;
 }

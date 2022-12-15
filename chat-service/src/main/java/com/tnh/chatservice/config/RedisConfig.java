@@ -41,9 +41,6 @@ public class RedisConfig {
         template.setValueSerializer(new JdkSerializationRedisSerializer());
         template.setEnableTransactionSupport(true);
         template.afterPropertiesSet();
-        template.expire("FriendChatRedis", 15, TimeUnit.DAYS);
-        template.expire("GroupChatRedis", 15, TimeUnit.DAYS);
-        template.expire("GroupMemberRedis", 15, TimeUnit.DAYS);
         return template;
     }
 

@@ -19,48 +19,69 @@ public class FriendChatRedisRepository {
         this.template = template;
     }
 
-    public List<FriendChat> findAllBySender(String sender) {
-        List<FriendChat> friendChats = new ArrayList<>();
-        var listFriendChatRedis = (List<FriendChatRedis>) template.opsForHash().values(sender);
-        listFriendChatRedis.forEach(friendChatRedis -> {
-            FriendChat friendChat = new FriendChat();
-            friendChat.setId(Long.parseLong(friendChatRedis.getId()));
-            ChatProfile senderInfo = new ChatProfile();
-            senderInfo.setUserId(UUID.fromString(friendChatRedis.getSender()));
-            friendChat.setSender(
-                    senderInfo
-            );
-            ChatProfile recipient = new ChatProfile();
-            recipient.setUserId(UUID.fromString(friendChatRedis.getRecipient()));
-            friendChat.setRecipient(recipient);
-            FriendChat chatWith = new FriendChat();
-            chatWith.setId(Long.valueOf(friendChatRedis.getChatWith()));
-            chatWith.setSender(recipient);
-            chatWith.setRecipient(senderInfo);
-            friendChat.setChatWith(chatWith);
-            friendChats.add(friendChat);
-        });
-
-        return friendChats;
-
-    }
-
-    public void deleteFriendChat(FriendChat friendChat) {
-        template.opsForHash().delete(friendChat.getSender().getUserId().toString());
-    }
-
     public FriendChatRedis save(FriendChat friendChat) {
-        FriendChatRedis friendChatRedis = new FriendChatRedis();
-        friendChatRedis.setChatWith(friendChat.getChatWith().toString());
-        friendChatRedis.setId(friendChat.getId().toString());
-        friendChatRedis.setSender(friendChat.getSender().getUserId().toString());
-        friendChatRedis.setRecipient(friendChat.getRecipient().getUserId().toString());
-        template.opsForHash().put(
-                friendChatRedis.getSender(),
-                friendChatRedis.getId(),
-                friendChatRedis
+        FriendChatRedis friendChatRedis = new FriendChatRedis(
+                friendChat.getId(),
+                friendChat.getChatWith().getId(),
+                friendChat.getSender().getUserId().toString(),
+                friendChat.getRecipient().getUserId().toString()
         );
+        template.opsForHash().put(friendChatRedis.getSender(), friendChatRedis.getId().toString(), friendChatRedis);
         return friendChatRedis;
     }
+
+    public void deleteFriendChat(String sender, String friendChatId) {
+        template.opsForHash().delete(sender, friendChatId);
+    }
+
+    public List<FriendChatRedis> findAllBySender(String sender) {
+        List<FriendChatRedis> friendChatRedisList =
+                template.opsForHash().values(sender);
+        return friendChatRedisList;
+    }
+
+//    public List<FriendChat> findAllBySender(String sender) {
+//        List<FriendChat> friendChats = new ArrayList<>();
+//        var listFriendChatRedis = (List<FriendChatRedis>) template.opsForHash().values(sender);
+//        listFriendChatRedis.forEach(friendChatRedis -> {
+//            FriendChat friendChat = new FriendChat();
+//            friendChat.setId(Long.valueOf(friendChatRedis.getId()));
+//            ChatProfile senderInfo = new ChatProfile();
+//            senderInfo.setUserId(UUID.fromString(friendChatRedis.getSender()));
+//            friendChat.setSender(
+//                    senderInfo
+//            );
+//            ChatProfile recipient = new ChatProfile();
+//            recipient.setUserId(UUID.fromString(friendChatRedis.getRecipient()));
+//            friendChat.setRecipient(recipient);
+//            FriendChat chatWith = new FriendChat();
+//            chatWith.setId(Long.valueOf(friendChatRedis.getChatWith()));
+//            chatWith.setSender(recipient);
+//            chatWith.setRecipient(senderInfo);
+//            friendChat.setChatWith(chatWith);
+//            friendChats.add(friendChat);
+//        });
+//
+//        return friendChats;
+//
+//    }
+//
+//    public void deleteFriendChat(FriendChat friendChat) {
+//        template.opsForHash().delete(friendChat.getSender().getUserId().toString());
+//    }
+//
+//    public FriendChatRedis save(FriendChat friendChat) {
+//        FriendChatRedis friendChatRedis = new FriendChatRedis();
+//        friendChatRedis.setChatWith(friendChat.getChatWith().toString());
+//        friendChatRedis.setId(friendChat.getId().toString());
+//        friendChatRedis.setSender(friendChat.getSender().getUserId().toString());
+//        friendChatRedis.setRecipient(friendChat.getRecipient().getUserId().toString());
+//        template.opsForHash().put(
+//                friendChatRedis.getSender(),
+//                friendChatRedis.getId(),
+//                friendChatRedis
+//        );
+//        return friendChatRedis;
+//    }
 
 }

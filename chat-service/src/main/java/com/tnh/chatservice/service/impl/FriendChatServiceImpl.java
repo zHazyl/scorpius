@@ -1,6 +1,7 @@
 package com.tnh.chatservice.service.impl;
 
 
+import com.tnh.chatservice.domain.FriendChatRedis;
 import com.tnh.chatservice.repository.ChatProfileRepository;
 import com.tnh.chatservice.repository.FriendChatRedisRepository;
 import com.tnh.chatservice.repository.FriendChatRepository;
@@ -60,21 +61,19 @@ public class FriendChatServiceImpl implements FriendChatService {
         friendChatForSecondUser.setChatWith(friendChatForFirstUser);
 
         friendChatRepository.save(friendChatForFirstUser);
+        friendChatRedisRepository.save(friendChatForFirstUser);
         friendChatRepository.save(friendChatForSecondUser);
+        friendChatRedisRepository.save(friendChatForSecondUser);
 
+    }
+
+    public List<FriendChatRedis> getAllFriendChatsRedisBySender(String currentUserId) {
+        return friendChatRedisRepository.findAllBySender(currentUserId);
     }
 
     @Override
     public List<FriendChat> getAllFriendsChatsBySender(String currentUserId) {
-        List<FriendChat> friendChats = new ArrayList<>();
-        try {
-            friendChats = friendChatRedisRepository.findAllBySender(currentUserId);
-            if (!friendChats.isEmpty()) {
-                return friendChats;
-            }
-        } catch (Exception e) {
-
-        }
+        List<FriendChat> friendChats;
 
         friendChats = chatProfileRepository.findById(UUID.fromString(currentUserId))
                 .map(friendChatRepository::findBySender)
@@ -93,13 +92,14 @@ public class FriendChatServiceImpl implements FriendChatService {
                 .orElseThrow(() -> new NotFoundException("Friend chat not found"));
         friendRequestRepository.deleteFriendRequestByChatProfiles(friendChat.getSender(), friendChat.getRecipient());
         friendChatRepository.delete(friendChat);
-        friendChatRedisRepository.deleteFriendChat(friendChat);
-        FriendChat swap = new FriendChat();
-        swap.setChatWith(friendChat);
-        swap.setId(friendChatId);
-        swap.setSender(friendChat.getRecipient());
-        swap.setRecipient(friendChat.getSender());
-        friendChatRedisRepository.deleteFriendChat(swap);
+        friendChatRedisRepository.deleteFriendChat(
+                friendChat.getRecipient().toString(),
+                friendChat.getChatWith().getId().toString()
+        );
+        friendChatRedisRepository.deleteFriendChat(
+                friendChat.getSender().toString(),
+                friendChat.getId().toString()
+        );
     }
 
 
