@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="update redis info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/domain/FriendChatRedis.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/domain/FriendChatRedis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/FriendChatRedisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/repository/FriendChatRedisRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/FriendChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/FriendChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/FriendChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/service/impl/FriendChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/target/generated-sources/annotations/com/tnh/authservice/mapper/UserMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/FriendChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/FriendChatController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -335,14 +331,7 @@
       <workItem from="1670717860134" duration="1597000" />
       <workItem from="1671021044011" duration="2201000" />
       <workItem from="1671077320894" duration="1607000" />
-      <workItem from="1671085527537" duration="2665000" />
-    </task>
-    <task id="LOCAL-00014" summary="up">
-      <created>1667827174029</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1667827174029</updated>
+      <workItem from="1671085527537" duration="3768000" />
     </task>
     <task id="LOCAL-00015" summary="up">
       <created>1667900034094</created>
@@ -680,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671032076154</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="update redis info">
+      <created>1671088217905</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1671088217907</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
