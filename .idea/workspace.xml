@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33704695-b3e3-472f-bc04-56add31979f1" name="Changes" comment="update redis info">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-messages-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/FriendChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/FriendChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-service/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud-gateway/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/messages-websocket-service/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,14 +329,7 @@
       <workItem from="1670717860134" duration="1597000" />
       <workItem from="1671021044011" duration="2201000" />
       <workItem from="1671077320894" duration="1607000" />
-      <workItem from="1671085527537" duration="5859000" />
-    </task>
-    <task id="LOCAL-00016" summary="up">
-      <created>1667911085258</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1667911085258</updated>
+      <workItem from="1671085527537" duration="6968000" />
     </task>
     <task id="LOCAL-00017" summary="up">
       <created>1667912182348</created>
@@ -682,7 +667,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671089301654</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="update redis info">
+      <created>1671091652057</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1671091652058</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -755,11 +747,6 @@
           <url>file://$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/GroupMemberController.java</url>
           <line>53</line>
           <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/chat-service/src/main/java/com/tnh/chatservice/web/rest/FriendChatController.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
