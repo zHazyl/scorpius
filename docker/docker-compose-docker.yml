@@ -50,14 +50,14 @@ services:
       - spring-chat-net
   scorpio-fe:
     container_name: scorpio-fe
-    image: zhazy/scorpius-fe:0.0.14-SNAPSHOT
+    image: zhazy/scorpius-fe:0.0.15-SNAPSHOT
     ports:
       - 2130:80
     networks:
       - spring-chat-net
   auth-service:
     container_name: auth-service
-    image: zhazy/auth-service:0.0.5-SNAPSHOT
+    image: zhazy/auth-service:0.0.8-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
@@ -84,7 +84,7 @@ services:
       - spring-chat-net
   chat-service:
     container_name: chat-service
-    image: zhazy/chat-service:0.0.6-SNAPSHOT
+    image: zhazy/chat-service:0.0.9-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
