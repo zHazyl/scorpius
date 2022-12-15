@@ -30,8 +30,8 @@ public class FriendChatRedisRepository {
         return friendChatRedis;
     }
 
-    public void deleteFriendChat(String sender, String friendChatId) {
-        template.opsForHash().delete(sender, friendChatId);
+    public void deleteFriendChat(String sender) {
+        template.opsForHash().delete(sender);
     }
 
     public List<FriendChatRedis> findAllBySender(String sender) {
