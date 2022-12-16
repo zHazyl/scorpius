@@ -84,7 +84,7 @@ services:
       - spring-chat-net
   chat-service:
     container_name: chat-service
-    image: zhazy/chat-service:0.0.9-SNAPSHOT
+    image: zhazy/chat-service:0.0.12-SNAPSHOT
     restart: always
     environment:
       SPRING_PROFILES_ACTIVE: ${PROFILE}
