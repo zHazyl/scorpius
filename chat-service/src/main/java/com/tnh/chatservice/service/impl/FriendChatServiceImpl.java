@@ -67,17 +67,22 @@ public class FriendChatServiceImpl implements FriendChatService {
 
     }
 
-    public List<FriendChatRedis> getAllFriendChatsRedisBySender(String currentUserId) {
-        return friendChatRedisRepository.findAllBySender(currentUserId);
+    public List<FriendChatRedis> getAllFriendChatsRedisBySender(
+            String currentUserId) {
+        return friendChatRedisRepository
+                .findAllBySender(currentUserId);
     }
 
     @Override
-    public List<FriendChat> getAllFriendsChatsBySender(String currentUserId) {
+    public List<FriendChat> getAllFriendsChatsBySender(
+            String currentUserId) {
         List<FriendChat> friendChats;
 
-        friendChats = chatProfileRepository.findById(UUID.fromString(currentUserId))
+        friendChats = chatProfileRepository.findById(
+                UUID.fromString(currentUserId))
                 .map(friendChatRepository::findBySender)
-                .orElseThrow(() -> new NotFoundException("User with id " + currentUserId + " not found"));
+                .orElseThrow(() -> new NotFoundException(
+                        "User with id " + currentUserId + " not found"));
         friendChats.forEach(friendChat -> {
             friendChatRedisRepository.save(friendChat);
         });
@@ -86,11 +91,15 @@ public class FriendChatServiceImpl implements FriendChatService {
 
     @Transactional
     @Override
-    public void deleteFriendChat(long friendChatId, long friendChatWithId, String currentUserId) {
-        var friendChat = friendChatRepository.findByIdAndFriendChatWithIdAndSenderId(friendChatId, friendChatWithId,
+    public void deleteFriendChat(long friendChatId, long friendChatWithId,
+                                 String currentUserId) {
+        var friendChat =
+                friendChatRepository.findByIdAndFriendChatWithIdAndSenderId(
+                friendChatId, friendChatWithId,
                 UUID.fromString(currentUserId))
                 .orElseThrow(() -> new NotFoundException("Friend chat not found"));
-        friendRequestRepository.deleteFriendRequestByChatProfiles(friendChat.getSender(), friendChat.getRecipient());
+        friendRequestRepository.deleteFriendRequestByChatProfiles(friendChat.getSender(),
+                friendChat.getRecipient());
         friendChatRedisRepository.deleteFriendChat(
                 friendChat.getSender().getUserId().toString(),
                 Long.toString(friendChatId)

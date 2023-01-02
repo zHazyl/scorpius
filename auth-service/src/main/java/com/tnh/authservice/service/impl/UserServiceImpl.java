@@ -118,15 +118,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public User modifyUser(String email, String firstName, String lastName) {
 
-        var user = findUserByEmail(email);
+        var user = userRepository.findByEmail(email);
         throwExceptionIfNotCurrentUser(user);
 
         if (isNotEmpty(firstName)) {
-            user.setFirstName(StringUtils.capitalize(firstName.toLowerCase().replaceAll(" ", "")));
+            user.setFirstName(StringUtils.capitalize(firstName.toLowerCase()
+                    .replaceAll(" ", "")));
         }
 
         if (isNotEmpty(lastName)) {
-            user.setLastName(StringUtils.capitalize(lastName.toLowerCase().replaceAll(" ", "")));
+            user.setLastName(StringUtils.capitalize(lastName.toLowerCase()
+                    .replaceAll(" ", "")));
         }
 
         try {

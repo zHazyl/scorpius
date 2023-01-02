@@ -26,7 +26,9 @@ public class FriendChatRedisRepository {
                 friendChat.getSender().getUserId().toString(),
                 friendChat.getRecipient().getUserId().toString()
         );
-        template.opsForHash().put(friendChatRedis.getSender(), friendChatRedis.getId().toString(), friendChatRedis);
+        template.opsForHash().put(friendChatRedis.getSender(),
+                friendChatRedis.getId().toString(),
+                friendChatRedis);
         return friendChatRedis;
     }
 

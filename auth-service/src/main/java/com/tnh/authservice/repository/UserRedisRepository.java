@@ -16,7 +16,11 @@ public class UserRedisRepository {
     public static final String HASH_KEY = "UserRedis";
 
     public User save(User user) {
-        template.opsForHash().put(HASH_KEY, user.getEmail(), new UserRedis(user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName()));
+        template.opsForHash().put(HASH_KEY, user.getEmail(),
+                new UserRedis(user.getUsername(),
+                        user.getEmail(),
+                        user.getFirstName(),
+                        user.getLastName()));
         return user;
     }
 

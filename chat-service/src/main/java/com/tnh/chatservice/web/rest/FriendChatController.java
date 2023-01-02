@@ -39,12 +39,11 @@ public class FriendChatController {
     public ResponseEntity<List<FriendChatDTO>> getAllFriendsChats() {
 
         List<FriendChatRedis> friendChatRedisList = null;
-
         try {
-            friendChatRedisList = friendChatService.getAllFriendChatsRedisBySender(SecurityUtils.getCurrentUser());
+            friendChatRedisList = friendChatService.getAllFriendChatsRedisBySender(
+                    SecurityUtils.getCurrentUser());
             if (!friendChatRedisList.isEmpty()) {
                 logger.debug("Redis");
-
                 List<FriendChatDTO> friendChatDTOS = new ArrayList<>();
                 friendChatRedisList.forEach(friendChatRedis -> {
                     FriendChatDTO friendChatDTO = new FriendChatDTO();
@@ -55,25 +54,13 @@ public class FriendChatController {
                     friendChatDTO.setRecipient(chatProfileDTO);
                     friendChatDTOS.add(friendChatDTO);
                 });
-
                 return ResponseEntity.ok(friendChatDTOS);
-
-//                return ResponseEntity.ok((List<FriendChatDTO>) friendChatRedisList.stream().map(friendChatRedis -> {
-//                    FriendChatDTO friendChatDTO = new FriendChatDTO();
-//                    friendChatDTO.setId(friendChatRedis.getId());
-//                    friendChatDTO.setChatWith(friendChatRedis.getChatWith());
-//                    ChatProfileDTO chatProfileDTO = new ChatProfileDTO();
-//                    chatProfileDTO.setUserId(friendChatRedis.getRecipient());
-//                    friendChatDTO.setRecipient(chatProfileDTO);
-//                    return friendChatDTO;
-//                }));
             }
         } catch (Exception e) {
-
         }
-
-        var allFriendsChatsBySender = friendChatService.getAllFriendsChatsBySender(SecurityUtils.getCurrentUser());
-
+        var allFriendsChatsBySender =
+                friendChatService.getAllFriendsChatsBySender(
+                SecurityUtils.getCurrentUser());
         return ResponseEntity.ok()
                 .body(friendChatMapper.mapToFriendChatList(allFriendsChatsBySender));
     }
